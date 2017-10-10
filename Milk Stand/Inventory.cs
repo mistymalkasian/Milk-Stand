@@ -8,5 +8,10 @@ namespace Milk_Stand
 {
     class Inventory
     {
+        //member variables
+
+        //constructor
+
+        //member methods
     }
 }

@@ -9,10 +9,10 @@ namespace Milk_Stand
 
     class Customer
     {
-        //member methods
+        //member variables
 
         //constructor
 
-        //member variables
+        //member methods
     }
 }

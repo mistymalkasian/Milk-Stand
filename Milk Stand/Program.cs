@@ -10,6 +10,11 @@ namespace Milk_Stand
     {
         static void Main(string[] args)
         {
+            Game Game = new Game();
+            Weather Weather = new Weather();
+            Game.DisplayRules();
+            Weather.DetermineWeather();
+            
         }
     }
 }

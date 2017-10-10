@@ -1,1 +1,6 @@
 c:\users\andrew malkasian\documents\visual studio 2015\Projects\Milk Stand\Milk Stand\bin\Debug\Milk Stand.exe.config
+c:\users\andrew malkasian\documents\visual studio 2015\Projects\Milk Stand\Milk Stand\bin\Debug\Milk Stand.exe
+c:\users\andrew malkasian\documents\visual studio 2015\Projects\Milk Stand\Milk Stand\bin\Debug\Milk Stand.pdb
+c:\users\andrew malkasian\documents\visual studio 2015\Projects\Milk Stand\Milk Stand\obj\Debug\Milk Stand.csprojResolveAssemblyReference.cache
+c:\users\andrew malkasian\documents\visual studio 2015\Projects\Milk Stand\Milk Stand\obj\Debug\Milk Stand.exe
+c:\users\andrew malkasian\documents\visual studio 2015\Projects\Milk Stand\Milk Stand\obj\Debug\Milk Stand.pdb

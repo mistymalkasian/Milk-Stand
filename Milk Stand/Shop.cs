@@ -8,5 +8,10 @@ namespace Milk_Stand
 {
     class Shop
     {
+        //member variables
+
+        //constructor
+
+        //member methods
     }
 }
