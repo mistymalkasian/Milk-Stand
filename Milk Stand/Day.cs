@@ -8,7 +8,7 @@ namespace Milk_Stand
 {
     class Day
     {
-        string name;
+        protected string name;
 
  
         public Day()

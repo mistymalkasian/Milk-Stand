@@ -26,7 +26,7 @@ namespace Milk_Stand
 
         //public void DetermineCurrentWeather(double Forecast)
         //{
-        //    make current weather whatever the forecast was yesterday, except for Day1, which will be random
+        //    make current weather whatever the forecast was yesterday
         //}
       public void WeatherMultiplier()
         {

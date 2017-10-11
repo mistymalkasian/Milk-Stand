@@ -8,7 +8,6 @@ namespace Milk_Stand
 {
     class Inventory
     {
-       // double amount;
 
         public Inventory()
         {
