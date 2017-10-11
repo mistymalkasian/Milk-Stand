@@ -12,12 +12,17 @@ namespace Milk_Stand
         {
             Game Game = new Game();
             Weather Weather = new Weather();
+            Customer Customer = new Customer("hello");
+            
             Game.DisplayRules();
             Weather.DetermineForecast();
-            Customer Bob = new Customer("Bob");
-            Customer Bobette = new Customer("Bobette");
-            Customer Gertrude = new Customer("Gertrude");
+            Customer.CustomerGenerator();
+
             
+
+
+
+
         }
     }
 }

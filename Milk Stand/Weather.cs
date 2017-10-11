@@ -51,10 +51,16 @@ namespace Milk_Stand
                 Console.WriteLine("A scorcher!!!");
             }
                          
-            Console.ReadLine();         
+            Console.ReadLine();
+                    
 
         }
 
+        public void DetermineCurrentWeather()
+        {
+            //make current weather whatever the forecast was yesterday, except for the starting day, which will be random
+            //
+        }
       public void WeatherMultiplier()
         {
             
