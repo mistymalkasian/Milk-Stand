@@ -14,7 +14,7 @@ namespace Milk_Stand
 
         public Player()
         {
-
+            Inventory Inventory = new Inventory();
         }
 
         public void AddtoScore()

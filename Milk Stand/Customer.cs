@@ -10,16 +10,18 @@ namespace Milk_Stand
     class Customer
     {
         //member variables
-        public string name;
+        public string Name;
         double LikelihoodToBuy;
-        int TypeChoice;
-        
+        int Type;
+        Random Random = new Random();
+
 
         //constructor
         public Customer(string name, double LikelihoodToBuy)
         {
-            this.name = name;
+            this.Name = name;
             this.LikelihoodToBuy = LikelihoodToBuy;
+           
             
         }
 
@@ -29,11 +31,11 @@ namespace Milk_Stand
             //put something that takes into account several different factors to determine whether or not a customer will buy Iced Milk on a given day.
             if (customer.LikelihoodToBuy == 2 )//&& CurrentWeather == 2) 
             {
-                Console.WriteLine(" doesn't want to buy any Milk because they are broke today.");
+                Console.WriteLine( " doesn't want to buy any Milk because they are broke today.");
             }
             else if (customer.LikelihoodToBuy == 3) //&& CurrentWeather == 3 )
             {
-                Console.WriteLine(" doesn't feel like buying any Milk today.");
+                Console.WriteLine(" doesn't feel like buying any Milk right now.");
             }
             else if (customer.LikelihoodToBuy == 4)
             {
@@ -48,90 +50,90 @@ namespace Milk_Stand
 
         public void DetermineCustomerType(Customer Patron)
         {
-            Random Random = new Random();
+            
             int TypeChoice = Random.Next(1, 21);
 
 
             switch (TypeChoice)
             {
                 case 1:
-                    Console.WriteLine("Youngster " + Patron.name);
+                    Console.WriteLine("Youngster " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 2:
-                    Console.WriteLine("Battle Girl " + Patron.name);
+                    Console.WriteLine("Battle Girl " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 3:
-                    Console.WriteLine("Madame " + Patron.name);
+                    Console.WriteLine("Madame " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 4:
-                    Console.WriteLine("Swimmer " + Patron.name);
+                    Console.WriteLine("Swimmer " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 5:
-                    Console.WriteLine("Ace Trainer " + Patron.name);
+                    Console.WriteLine("Ace Trainer " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 6:
-                    Console.WriteLine("Athlete " + Patron.name);
+                    Console.WriteLine("Athlete " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 7:
-                    Console.WriteLine("Backpacker " + Patron.name);
+                    Console.WriteLine("Backpacker " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 8:
-                    Console.WriteLine("Parasol Lady " + Patron.name);
+                    Console.WriteLine("Parasol Lady " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 9:
-                    Console.WriteLine("Poke Fan " + Patron.name);
+                    Console.WriteLine("Poke Fan " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 10:
-                    Console.WriteLine("Poke Maniac " + Patron.name);
+                    Console.WriteLine("Poke Maniac " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 11:
-                    Console.WriteLine("Nursery Aide " + Patron.name);
+                    Console.WriteLine("Nursery Aide " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 12:
-                    Console.WriteLine("Pokemon Breeder " + Patron.name);
+                    Console.WriteLine("Pokemon Breeder " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 13:
-                    Console.WriteLine("Bug Catcher " + Patron.name);
+                    Console.WriteLine("Bug Catcher " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 14:
-                    Console.WriteLine("Chef " + Patron.name);
+                    Console.WriteLine("Chef " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 15:
-                    Console.WriteLine("Interviewer " + Patron.name);
+                    Console.WriteLine("Interviewer " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 16:
-                    Console.WriteLine("Bodybuilder " + Patron.name);
+                    Console.WriteLine("Bodybuilder " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 17:
-                    Console.WriteLine("Comedian " + Patron.name);
+                    Console.WriteLine("Comedian " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 18:
-                    Console.WriteLine("Biker " + Patron.name);
+                    Console.WriteLine("Biker " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 19:
-                    Console.WriteLine("Executive " + Patron.name);
+                    Console.WriteLine("Executive " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 case 20:
-                    Console.WriteLine("Expert " + Patron.name);
+                    Console.WriteLine("Expert " + Patron.Name);
                     DetermineWhoBuys(Patron);
                     break;
                 default:
@@ -154,9 +156,24 @@ namespace Milk_Stand
             Customer Deirdre = new Customer("Deirdre", 3);
             Customer Laurie = new Customer("Laurie", 4);
             Customer Ben = new Customer("Ben", 3);
-
-            //Random Random = new Random();
-            //int NewCustomer = Random.Next(1, 6);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
+            //Customer Ben = new Customer("Ben", 3);
 
             List<Customer> Patrons = new List<Customer>();
             Patrons.Add(Agnes);

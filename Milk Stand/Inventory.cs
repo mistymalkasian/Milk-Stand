@@ -8,10 +8,14 @@ namespace Milk_Stand
 {
     class Inventory
     {
-        //member variables
+       // double amount;
 
-        //constructor
-
-        //member methods
+        public Inventory()
+        {
+            Cup Cup = new Cup();
+            Ice Ice = new Ice();
+            FlavorPacket FlavorPacket = new FlavorPacket();
+            Milk_Carton Milk_Carton = new Milk_Carton();
+        }
     }
 }

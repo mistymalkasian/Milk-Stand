@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milk Stand", "Milk Stand\Milk Stand.csproj", "{4BEF538D-6FDA-4CA6-B4FA-27239B4BA378}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilkStand", "Milk Stand\MilkStand.csproj", "{4BEF538D-6FDA-4CA6-B4FA-27239B4BA378}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

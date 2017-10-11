@@ -8,12 +8,13 @@ namespace Milk_Stand
 {
     class Shop
     {
-        //member variables
+        public Shop()
+        {
 
-        //constructor
+        }
 
-        //member methods
-       public void SellToPlayer()
+        
+        public void SellToPlayer()
         {
             //something that sells items to the player.
         }

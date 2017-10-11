@@ -8,19 +8,44 @@ namespace Milk_Stand
 {
     class Day
     {
-        //member variables
-        string Day1 = "Sunday";
-        string Day2 = "Monday";
-        string Day3 = "Tuesday";
-        string Day4 = "Wednesday";
-        string Day5 = "Thursday";
-        string Day6 = "Friday";
-        string Day7 = "Saturday";
-        
-        //etc.
+        string name;
 
-        //constructor
+ 
+        public Day()
+        {
+            Weather Weather = new Weather();
+            Customer Customer = new Customer();
+        }
 
-        //member methods
+        public double DetermineForecast()
+        {
+            Random Random = new Random();
+            double Forecast = Random.Next(1, 6);
+
+            Console.WriteLine("FORECAST");
+            Console.WriteLine("Tomorrow's weather will be:");
+
+            if (Forecast == 1)
+            {
+                Console.WriteLine("Rainy.");
+            }
+            else if (Forecast == 2)
+            {
+                Console.WriteLine("Hazy.");
+            }
+            else if (Forecast == 3)
+            {
+                Console.WriteLine("Cloudy.");
+            }
+            else if (Forecast == 4)
+            {
+                Console.WriteLine("Sunny.");
+            }
+            else
+            {
+                Console.WriteLine("A scorcher!!!");
+            }
+            return Forecast;
+        }
     }
 }
