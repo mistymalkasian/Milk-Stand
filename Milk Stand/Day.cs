@@ -14,7 +14,7 @@ namespace Milk_Stand
         public Day()
         {
             Weather Weather = new Weather();
-            Customer Customer = new Customer();
+            Customer Customer = new Customer("test", 1, 1);
         }
 
         public double DetermineForecast()

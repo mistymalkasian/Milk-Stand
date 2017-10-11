@@ -12,12 +12,13 @@ namespace Milk_Stand
         //member variables
         public string Name;
         double LikelihoodToBuy;
+        double Thirst;
         int Type;
         Random Random = new Random();
 
 
         //constructor
-        public Customer(string name, double LikelihoodToBuy)
+        public Customer(string name, double LikelihoodToBuy, double Thirst)
         {
             this.Name = name;
             this.LikelihoodToBuy = LikelihoodToBuy;
@@ -37,11 +38,11 @@ namespace Milk_Stand
             {
                 Console.WriteLine(" doesn't feel like buying any Milk right now.");
             }
-            else if (customer.LikelihoodToBuy == 4)
+            else if (customer.LikelihoodToBuy == 4)//&&
             {
                 Console.WriteLine(" buys a glass of Milk!");
             }
-            else if (customer.LikelihoodToBuy == 5)
+            else if (customer.LikelihoodToBuy == 5)//&&
             {
                 Console.WriteLine(" buys a glass of Milk!");
             }
@@ -144,18 +145,18 @@ namespace Milk_Stand
             public void CustomerGenerator()
 
         {
-            Customer Agnes = new Customer("Agnes", 2);
-            Customer Bobette = new Customer("Bobette", 4);
-            Customer Gertrude = new Customer("Gertrude", 3);
-            Customer UmaBob = new Customer("Uma Bob", 5);
-            Customer Edwin = new Customer("Edwin", 3);
-            Customer Winnifred = new Customer("Winnifred", 2);
-            Customer Jane = new Customer("Jane", 5);
-            Customer Chives = new Customer("Chives", 2);
-            Customer Janice = new Customer("Janice", 5);
-            Customer Deirdre = new Customer("Deirdre", 3);
-            Customer Laurie = new Customer("Laurie", 4);
-            Customer Ben = new Customer("Ben", 3);
+            Customer Agnes = new Customer("Agnes", 2, 3);
+            Customer Bobette = new Customer("Bobette", 4, 2);
+            Customer Gertrude = new Customer("Gertrude", 3, 3);
+            Customer UmaBob = new Customer("Uma Bob", 5, 3);
+            Customer Edwin = new Customer("Edwin", 3, 4);
+            Customer Winnifred = new Customer("Winnifred", 2, 5);
+            Customer Jane = new Customer("Jane", 5, 4);
+            Customer Chives = new Customer("Chives", 2, 2);
+            Customer Janice = new Customer("Janice", 5, 2);
+            Customer Deirdre = new Customer("Deirdre", 3, 4);
+            Customer Laurie = new Customer("Laurie", 4, 3);
+            Customer Ben = new Customer("Ben", 3, 1);
             //Customer Ben = new Customer("Ben", 3);
             //Customer Ben = new Customer("Ben", 3);
             //Customer Ben = new Customer("Ben", 3);

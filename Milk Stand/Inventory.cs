@@ -15,7 +15,7 @@ namespace Milk_Stand
             Cup Cup = new Cup();
             Ice Ice = new Ice();
             FlavorPacket FlavorPacket = new FlavorPacket();
-            Milk_Carton Milk_Carton = new Milk_Carton();
+            MilkCarton MilkCarton = new MilkCarton();
         }
     }
 }
