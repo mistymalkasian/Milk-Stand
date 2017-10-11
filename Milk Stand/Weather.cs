@@ -9,20 +9,20 @@ namespace Milk_Stand
     class Weather
     {
         //member variables
-        double CurrentWeather;
-        double Forecast;
+       public double CurrentWeather;
+       public double Forecast;
        
 
 
         //constructor
-        public Weather()
+        public Weather(double Forecast)
         {
             
         }
 
         //member methods
 
-        public void DetermineForecast()
+        public double DetermineForecast()
         {
            Random Random = new Random();
            double Forecast = Random.Next(1, 6);
@@ -50,17 +50,13 @@ namespace Milk_Stand
             {
                 Console.WriteLine("A scorcher!!!");
             }
-                         
-            Console.ReadLine();
-                    
-
+            return Forecast;
         }
 
-        public void DetermineCurrentWeather()
-        {
-            //make current weather whatever the forecast was yesterday, except for the starting day, which will be random
-            //
-        }
+        //public void DetermineCurrentWeather(double Forecast)
+        //{
+        //    make current weather whatever the forecast was yesterday, except for the starting day, which will be random
+        //}
       public void WeatherMultiplier()
         {
             

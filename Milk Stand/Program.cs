@@ -11,8 +11,8 @@ namespace Milk_Stand
         static void Main(string[] args)
         {
             Game Game = new Game();
-            Weather Weather = new Weather();
-            Customer Customer = new Customer("hello");
+            Weather Weather = new Weather(2);
+            Customer Customer = new Customer("hello", 4);
             
             Game.DisplayRules();
             Weather.DetermineForecast();
