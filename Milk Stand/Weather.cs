@@ -11,7 +11,7 @@ namespace Milk_Stand
         //member variables
         double CurrentWeather;
         double Forecast;
-
+       
 
 
         //constructor
@@ -22,36 +22,47 @@ namespace Milk_Stand
 
         //member methods
 
-        public void DetermineWeather()
+        public void DetermineForecast()
         {
            Random Random = new Random();
+           double Forecast = Random.Next(1, 6);
 
-           double WeatherChoice = Random.Next(1, 5);
+            Console.WriteLine("FORECAST");
+            Console.WriteLine("Tomorrow's weather will be:");
 
-           Console.WriteLine("Today's weather is:");
-
-            if (WeatherChoice == 1)
-            {
-                Console.WriteLine("Sunny.");
-            }
-            else if (WeatherChoice == 2)
-            {
-                Console.WriteLine("Hazy.");
-            }
-            else if (WeatherChoice == 3)
-            {
-                Console.WriteLine("Cloudy.");
-            }
-            else
+            if (Forecast == 1)
             {
                 Console.WriteLine("Rainy.");
             }
-                
-
-            
-            Console.ReadLine();
-            
+            else if (Forecast == 2)
+            {
+                Console.WriteLine("Hazy.");
+            }
+            else if (Forecast == 3)
+            {
+                Console.WriteLine("Cloudy.");
+            }
+            else if (Forecast == 4)
+            {
+                Console.WriteLine("Sunny.");
+            }
+            else
+            {
+                Console.WriteLine("A scorcher!!!");
+            }
+                         
+            Console.ReadLine();         
 
         }
+
+      public void WeatherMultiplier()
+        {
+            
+        }
+
+
+
+
+
     }
 }

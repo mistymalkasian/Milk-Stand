@@ -13,5 +13,9 @@ namespace Milk_Stand
         //constructor
 
         //member methods
+       public void SellToPlayer()
+        {
+            //something that sells items to the player.
+        }
     }
 }
