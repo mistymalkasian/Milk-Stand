@@ -8,44 +8,38 @@ namespace Milk_Stand
 {
     class Day
     {
-        protected string name;
+        public string name;
+        protected int Day2Forecast;
+        protected int Day3Forecast;
+        protected int Day4Forecast;
+        protected int Day5Forecast;
+        protected int Day6Forecast;
+        protected int Day7Forecast;
 
- 
+        
         public Day()
         {
+            this.name = name;
+
             Weather Weather = new Weather();
-            Customer Customer = new Customer("test", 1, 1);
+            Customer Agnes = new Customer("Agnes", 2);
+            Customer Bobette = new Customer("Bobette", 4);
+            Customer Gertrude = new Customer("Gertrude", 3);
+            Customer UmaBob = new Customer("Uma Bob", 5);
+            Customer Edwin = new Customer("Edwin", 3);
+            Customer Winnifred = new Customer("Winnifred", 2);
+            Customer Jane = new Customer("Jane", 5);
+            Customer Chives = new Customer("Chives", 2);
+            Customer Gladys = new Customer("Gladys", 5);
+            Customer Deirdre = new Customer("Deirdre", 3);
+            Customer Laurie = new Customer("Laurie", 4);
+            Customer Ben = new Customer("Ben", 3);
+
         }
 
-        public double DetermineForecast()
-        {
-            Random Random = new Random();
-            double Forecast = Random.Next(1, 6);
 
-            Console.WriteLine("FORECAST");
-            Console.WriteLine("Tomorrow's weather will be:");
 
-            if (Forecast == 1)
-            {
-                Console.WriteLine("Rainy.");
-            }
-            else if (Forecast == 2)
-            {
-                Console.WriteLine("Hazy.");
-            }
-            else if (Forecast == 3)
-            {
-                Console.WriteLine("Cloudy.");
-            }
-            else if (Forecast == 4)
-            {
-                Console.WriteLine("Sunny.");
-            }
-            else
-            {
-                Console.WriteLine("A scorcher!!!");
-            }
-            return Forecast;
-        }
-    }
+       
+
 }
+    }

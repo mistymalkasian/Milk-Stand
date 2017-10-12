@@ -46,13 +46,6 @@
     <Compile Include="Cup.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Day.cs" />
-    <Compile Include="Day1.cs" />
-    <Compile Include="Day2.cs" />
-    <Compile Include="Day3.cs" />
-    <Compile Include="Day4.cs" />
-    <Compile Include="Day5.cs" />
-    <Compile Include="Day6.cs" />
-    <Compile Include="Day7.cs" />
     <Compile Include="FlavorPacket.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Ice.cs" />
