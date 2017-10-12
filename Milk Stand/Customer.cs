@@ -24,17 +24,31 @@ namespace Milk_Stand
             
         }
 
-       public void DetermineWhoBuys(Customer customer)
+       public void DetermineWhoBuys(Customer customer, Day day)
         {
+            if (customer.Thirst == 2 || day.CurrentWeather == "Rainy")
+            {
+                List<string> Reasons = new List<string>();
+                Reasons.Add(" doesn't want to buy any Milk because it's raining.");
+                Reasons.Add(" doesn't want to buy any Milk because they aren't thirsty.");
+                //Reason.Add(" doesn't want to buy any Milk because the recipe isn't good.");
+                Random Random = new Random();
+                string Reason = Convert.ToString(Random.Next(Reasons.Count));
+                Console.WriteLine(Reason);
 
-            //put something that takes into account several different factors to determine whether or not a customer will buy Iced Milk on a given day.
-            if (customer.Thirst == 2 && CurrentWeather == 2); 
-            {
-                Console.WriteLine( " doesn't want to buy any Milk because they are broke today.");
             }
-            else if (customer.Thirst == 3) //&& CurrentWeather == 3 )
+            else if (customer.Thirst == 3 || day.CurrentWeather == "Hazy")
             {
-                Console.WriteLine(" doesn't feel like buying any Milk right now.");
+                
+                List<string> Reasons = new List<string>();
+                Reasons.Add(" doesn't want to buy any Milk because it's hazy.");
+                Reasons.Add(" doesn't want to buy any Milk because they aren't thirsty enough.");
+                Reasons.Add(" buys a glass of Milk!");
+                //Reason.Add(" doesn't want to buy any Milk because the recipe isn't good.");
+                //Reason.Add(" doesn't want to buy any Milk because the price is too high.");
+                Random Random = new Random();
+                string Reason = Convert.ToString(Random.Next(Reasons.Count));
+                Console.WriteLine(Reason);
             }
             else if (customer.Thirst == 4)//&&
             {
@@ -47,7 +61,7 @@ namespace Milk_Stand
            
         }
 
-        public void DetermineCustomerType(Customer Patron)
+        public void DetermineCustomerType(Customer Patron, Day day)
         {
             
             int TypeChoice = Random.Next(1, 21);
@@ -57,90 +71,90 @@ namespace Milk_Stand
             {
                 case 1:
                     Console.WriteLine("Youngster " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 2:
                     Console.WriteLine("Battle Girl " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 3:
                     Console.WriteLine("Madame " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 4:
                     Console.WriteLine("Swimmer " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 5:
                     Console.WriteLine("Ace Trainer " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 6:
                     Console.WriteLine("Athlete " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 7:
                     Console.WriteLine("Backpacker " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 8:
                     Console.WriteLine("Parasol Lady " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 9:
                     Console.WriteLine("Poke Fan " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 10:
                     Console.WriteLine("Poke Maniac " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 11:
                     Console.WriteLine("Nursery Aide " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 12:
                     Console.WriteLine("Pokemon Breeder " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 13:
                     Console.WriteLine("Bug Catcher " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 14:
                     Console.WriteLine("Chef " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 15:
                     Console.WriteLine("Interviewer " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 16:
                     Console.WriteLine("Bodybuilder " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 17:
                     Console.WriteLine("Comedian " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 18:
                     Console.WriteLine("Biker " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 19:
                     Console.WriteLine("Executive " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 case 20:
                     Console.WriteLine("Expert " + Patron.Name);
-                    DetermineWhoBuys(Patron);
+                    DetermineWhoBuys(Patron, day);
                     break;
                 default:
                     break;
             }
         }
 
-            public void CustomerGenerator()
+            public void CustomerGenerator(Day day)
 
         {
             Customer Agnes = new Customer("Agnes", 2);
@@ -173,7 +187,7 @@ namespace Milk_Stand
 
             foreach (Customer Patron in Patrons)
             {
-                DetermineCustomerType(Patron);
+                DetermineCustomerType(Patron, day);
               
             }
             Console.ReadLine();

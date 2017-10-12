@@ -9,19 +9,23 @@ namespace Milk_Stand
     class Day
     {
         public string name;
-        protected int Day2Forecast;
-        protected int Day3Forecast;
-        protected int Day4Forecast;
-        protected int Day5Forecast;
-        protected int Day6Forecast;
-        protected int Day7Forecast;
+        public string CurrentWeather;
+
+        //protected int Day2Forecast;
+        //protected int Day3Forecast;
+        //protected int Day4Forecast;
+        //protected int Day5Forecast;
+        //protected int Day6Forecast;
+        //protected int Day7Forecast;
 
         
-        public Day()
+        public Day(string name)
         {
             this.name = name;
+            
 
-            Weather Weather = new Weather();
+            //Weather Weather = new Weather();
+
             Customer Agnes = new Customer("Agnes", 2);
             Customer Bobette = new Customer("Bobette", 4);
             Customer Gertrude = new Customer("Gertrude", 3);
@@ -34,6 +38,14 @@ namespace Milk_Stand
             Customer Deirdre = new Customer("Deirdre", 3);
             Customer Laurie = new Customer("Laurie", 4);
             Customer Ben = new Customer("Ben", 3);
+
+            //Day Day1 = new Day("Sunday");
+            //Day Day2 = new Day("Monday");
+            //Day Day3 = new Day("Tuesday");
+            //Day Day4 = new Day("Wednesday");
+            //Day Day5 = new Day("Thursday");
+            //Day Day6 = new Day("Friday");
+            //Day Day7 = new Day("Saturday");
 
         }
 

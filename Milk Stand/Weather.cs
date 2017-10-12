@@ -35,90 +35,21 @@ namespace Milk_Stand
         Random Random = new Random();
 
 
-        public void DetermineWeather(Day day)
+        public void DisplayWeather(Day day)
         {
-            CurrentWeather = Convert.ToString(Random.Next(1, 5));
+            //CurrentWeather = Convert.ToString(Random.Next(1, 5));
 
-            Console.WriteLine("Today is " + name + "!");
+            Console.WriteLine("Today is " + day.name + "!");
             Console.WriteLine("WEATHER NEWS");
-            Console.WriteLine("Today's weather is:");
+            Console.WriteLine("Today's weather is:" + Forecast);
 
-            if (WeatherChoice == 1)
-            {
-                Console.WriteLine("Rainy.");
-            }
-            else if (WeatherChoice == 2)
-            {
-                Console.WriteLine("Hazy.");
-            }
-            else if (WeatherChoice == 3)
-            {
-                Console.WriteLine("Cloudy.");
-            }
-            else if (WeatherChoice == 4)
-            {
-                Console.WriteLine("Sunny.");
-            }
-            else
-            {
-                Console.WriteLine("A scorcher!!!");
-            }
             Console.ReadLine();
-        }
-
-        public void DetermineForecast()
-        {
-            //use dot notation here instead of hard coding junk
-            Day2Forecast = Random.Next(1, 5);
-
-            Console.WriteLine("FORECAST");
-            Console.WriteLine("Tomorrow's weather will be:");
-
-            if (Day2Forecast == 1)
-            {
-                Console.WriteLine("Rainy.");
-                //WeatherMultiplier(-1);
-            }
-            else if (Day2Forecast == 2)
-            {
-                Console.WriteLine("Hazy.");
-            }
-            else if (Day2Forecast == 3)
-            {
-                Console.WriteLine("Cloudy.");
-            }
-            else if (Day2Forecast == 4)
-            {
-                Console.WriteLine("Sunny.");
-            }
-            else
-            {
-                Console.WriteLine("A scorcher!!!");
-            }
-            Console.ReadLine();
-
-        }
-
-        name = "Monday";
-           
+        }        
     }
-    public void DisplayWeather()
-    {
-        Random Random = new Random();
-        int WeatherChoice = Random.Next(1, 5);
+  
+    //public void WeatherMultiplier(int Number)
+    //{
 
-        Console.WriteLine("Today is " + Day.name + "!");
-        Console.WriteLine("WEATHER NEWS");
-        Console.WriteLine("Today's weather is:" + Day2Forecast);
-        Console.ReadLine();
-    }
-
-    public void WeatherMultiplier(int Number)
-    {
-
-    }
-
-
-
+    //}
 }
 

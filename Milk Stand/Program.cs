@@ -12,15 +12,16 @@ namespace Milk_Stand
         {
             Game Game = new Game();
             Weather Weather = new Weather();
-            Customer Customer = new Customer("hello", 4, 1);
-            Day1 Sunday = new Day1();
-            Day2 Monday = new Day2();
+            Customer Customer = new Customer("hello", 4);
+            Day Day1 = new Day("Sunday");
+            
+                    
 
             Game.DisplayRules();
-            Sunday.DetermineWeather();
-            Sunday.DetermineForecast();
-            Monday.DisplayWeather();
-            Customer.CustomerGenerator();
+           
+            Weather.DetermineWeather(Day1);
+            Weather.DetermineForecast();
+            Customer.CustomerGenerator(Day1);
             
 
             
