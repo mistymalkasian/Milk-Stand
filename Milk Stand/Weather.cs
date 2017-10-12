@@ -15,20 +15,27 @@ namespace Milk_Stand
         {
             Random Random = new Random();
 
-           List<string> WeatherTypes = new List<string>();
-
-            WeatherTypes.Add("Rainy");
-            WeatherTypes.Add("Hazy");
-            WeatherTypes.Add("Cloudy");
-            WeatherTypes.Add("Sunny");
-            string Forecast = Convert.ToString(Random.Next(WeatherTypes.Count));
+         
+            
         }
 
         public void DetermineForecast()
         {
-           
+
+
+
+
+
+            string[] WeatherTypes = new string[5];
+
+            WeatherTypes[0] = "Rainy";
+            WeatherTypes[1] = "Hazy";
+            WeatherTypes[2] = "Cloudy";
+            WeatherTypes[3] = "Sunny";
+            WeatherTypes[4] = "HOT!";
+            string Forecast = Convert.ToString(WeatherTypes[Random.Next(0, 4)]);
             Console.WriteLine("FORECAST");
-            Console.WriteLine("Tomorrow's weather will be:" + Forecast);
+            Console.WriteLine("Tomorrow's weather will be: " + Forecast);
 
         }
 

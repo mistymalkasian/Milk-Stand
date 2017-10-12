@@ -8,5 +8,6 @@ namespace Milk_Stand
 {
     class MilkCarton : Inventory
     {
+        double price;
     }
 }

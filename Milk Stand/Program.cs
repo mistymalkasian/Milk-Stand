@@ -19,7 +19,7 @@ namespace Milk_Stand
 
             Game.DisplayRules();
            
-            Weather.DetermineWeather(Day1);
+            Weather.DisplayWeather(Day1);
             Weather.DetermineForecast();
             Customer.CustomerGenerator(Day1);
             

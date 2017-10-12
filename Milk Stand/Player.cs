@@ -9,7 +9,7 @@ namespace Milk_Stand
     class Player
     {
         //member variables
-        double score;
+        double wallet;
 
 
         public Player()
@@ -17,7 +17,7 @@ namespace Milk_Stand
             Inventory Inventory = new Inventory();
         }
 
-        public void AddtoScore()
+        public void AddtoWallet()
         {
 
         }

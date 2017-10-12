@@ -13,6 +13,7 @@ namespace Milk_Stand
 
         }
 
+        //welcome them to the shop and offer them a list of things to buy. have quantities and use a for loop to add those objects to the player's Inventory.
         
         public void SellToPlayer()
         {
