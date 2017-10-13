@@ -24,44 +24,48 @@ namespace Milk_Stand
             
         }
 
-       public void DetermineWhoBuys(Customer customer, Day day)
+       public void DetermineWhoBuys(Customer customer, Weather weather)//recipe and price will eventually need to be passed in as well
         {
-            if (customer.Thirst == 2 || day.CurrentWeather == "Rainy")
+            if (weather.CurrentWeather == "Sunny" || weather.CurrentWeather == "HOT!" && customer.Thirst >= 3)
             {
-                List<string> Reasons = new List<string>();
-                Reasons.Add(" doesn't want to buy any Milk because it's raining.");
-                Reasons.Add(" doesn't want to buy any Milk because they aren't thirsty.");
-                //Reason.Add(" doesn't want to buy any Milk because the recipe isn't good.");
-                Random Random = new Random();
-                string Reason = Convert.ToString(Random.Next(Reasons.Count));
-                Console.WriteLine(Reason);
+                string[] Reasons = new string[3];
+
+                Reasons[0] = " buys some Milk because it's hot outside!";
+                Reasons[1] = " buys some Milk because they are thirsty!";
+                //Reasons[2] = " buys some Milk because the recipe is great!";
+                Reasons[2] = " buys some Milk because they are feeling sorry for you!";
+
+                string ReasonForYes = Convert.ToString(Reasons[Random.Next(0, 3)]);
+                Console.WriteLine(ReasonForYes);
+                //add to player's money by amount specified at the start of the day (by the player) and take away from their current inventory supplies by the amount specified
 
             }
-            else if (customer.Thirst == 3 || day.CurrentWeather == "Hazy")
+            else if (customer.Thirst <= 3 && weather.CurrentWeather== "Rainy")//&& recipe is bad && price is high
             {
-                
-                List<string> Reasons = new List<string>();
-                Reasons.Add(" doesn't want to buy any Milk because it's hazy.");
-                Reasons.Add(" doesn't want to buy any Milk because they aren't thirsty enough.");
-                Reasons.Add(" buys a glass of Milk!");
-                //Reason.Add(" doesn't want to buy any Milk because the recipe isn't good.");
-                //Reason.Add(" doesn't want to buy any Milk because the price is too high.");
-                Random Random = new Random();
-                string Reason = Convert.ToString(Random.Next(Reasons.Count));
-                Console.WriteLine(Reason);
+
+                string[] Reasons = new string[3];
+
+                Reasons[0] = " doesn't want to buy any Milk because the price is too high.";
+                Reasons[1] = " doesn't want to buy any Milk because they aren't thirsty enough.";
+                //Reasons[2] = " doesn't want to buy any Milk because the recipe isn't good.";
+                Reasons[2] = " doesn't want to buy any Milk because of the weather.";
+               
+                string ReasonForNo = Convert.ToString(Reasons[Random.Next(0, 3)]);
+                Console.WriteLine(ReasonForNo);
             }
-            else if (customer.Thirst == 4)//&&
+            else if (weather.CurrentWeather == "Hazy" || weather.CurrentWeather == "Cloudy")//&&
             {
                 Console.WriteLine(" buys a glass of Milk!");
+                   
             }
-            else if (customer.Thirst == 5)//&&
+          else
             {
-                Console.WriteLine(" buys a glass of Milk!");
+                Console.WriteLine(" supposes that they'll buy some Milk because why not!");
             }
            
         }
 
-        public void DetermineCustomerType(Customer Patron, Day day)
+        public void DetermineCustomerType(Customer Patron, Weather weather)
         {
             
             int TypeChoice = Random.Next(1, 21);
@@ -71,90 +75,90 @@ namespace Milk_Stand
             {
                 case 1:
                     Console.WriteLine("Youngster " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 2:
                     Console.WriteLine("Battle Girl " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 3:
                     Console.WriteLine("Madame " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 4:
                     Console.WriteLine("Swimmer " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 5:
                     Console.WriteLine("Ace Trainer " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 6:
                     Console.WriteLine("Athlete " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 7:
                     Console.WriteLine("Backpacker " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 8:
                     Console.WriteLine("Parasol Lady " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 9:
                     Console.WriteLine("Poke Fan " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 10:
                     Console.WriteLine("Poke Maniac " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 11:
                     Console.WriteLine("Nursery Aide " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 12:
                     Console.WriteLine("Pokemon Breeder " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 13:
                     Console.WriteLine("Bug Catcher " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 14:
                     Console.WriteLine("Chef " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 15:
                     Console.WriteLine("Interviewer " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 16:
                     Console.WriteLine("Bodybuilder " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 17:
                     Console.WriteLine("Comedian " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 18:
                     Console.WriteLine("Biker " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 19:
                     Console.WriteLine("Executive " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 case 20:
                     Console.WriteLine("Expert " + Patron.Name);
-                    DetermineWhoBuys(Patron, day);
+                    DetermineWhoBuys(Patron, weather);
                     break;
                 default:
                     break;
             }
         }
 
-            public void CustomerGenerator(Day day)
+            public void CustomerGenerator(Weather weather)
 
         {
             Customer Agnes = new Customer("Agnes", 2);
@@ -187,7 +191,7 @@ namespace Milk_Stand
 
             foreach (Customer Patron in Patrons)
             {
-                DetermineCustomerType(Patron, day);
+                DetermineCustomerType(Patron, weather);
               
             }
             Console.ReadLine();

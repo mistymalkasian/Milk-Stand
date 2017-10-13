@@ -8,5 +8,9 @@ namespace Milk_Stand
 {
     class FlavorPacket : Inventory
     {
+        public FlavorPacket()
+        {
+            price = 0.25;
+        }
     }
 }

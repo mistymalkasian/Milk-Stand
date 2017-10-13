@@ -8,6 +8,9 @@ namespace Milk_Stand
 {
     class MilkCarton : Inventory
     {
-        double price;
+        public MilkCarton()
+        {
+            price = 1.00;
+        }
     }
 }

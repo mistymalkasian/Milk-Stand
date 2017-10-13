@@ -8,5 +8,9 @@ namespace Milk_Stand
 {
     class Ice : Inventory
     {
+        public Ice()
+        {
+            price = 0.05;
+        }
     }
 }

@@ -8,15 +8,18 @@ namespace Milk_Stand
 {
     class Weather
     {
-        public string CurrentWeather;
+    
         public string Forecast;
+        public string CurrentWeather;
 
         public Weather()
         {
-            Random Random = new Random();
+            Random Random = new Random();           
+        }
 
-         
-            
+        public void DisplayDay(Day day)
+        {
+            Console.WriteLine("Today is " + day.name + "!");
         }
 
         public void DetermineForecast()
@@ -28,25 +31,21 @@ namespace Milk_Stand
             WeatherTypes[2] = "Cloudy";
             WeatherTypes[3] = "Sunny";
             WeatherTypes[4] = "HOT!";
-            string Forecast = Convert.ToString(WeatherTypes[Random.Next(0, 4)]);
+            Forecast = Convert.ToString(WeatherTypes[Random.Next(0, 5)]);
             Console.WriteLine("FORECAST");
             Console.WriteLine("Tomorrow's weather will be: " + Forecast);
-            DisplayWeather(Forecast);
+          
             
         }
 
         Random Random = new Random();
-
-
-        public void DisplayDay(Day day)
-        { 
-            Console.WriteLine("Today is " + day.name + "!");
-        }    
+   
         
          public void DisplayWeather(string Forecast)
         {
+            CurrentWeather = Forecast;
             Console.WriteLine("WEATHER NEWS");
-            Console.WriteLine("Today's weather is: " + Forecast);
+            Console.WriteLine("Today's weather is: " + CurrentWeather);
             Console.ReadLine();
         }   
     }

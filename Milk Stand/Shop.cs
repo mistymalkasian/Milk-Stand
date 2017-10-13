@@ -10,14 +10,83 @@ namespace Milk_Stand
     {
         public Shop()
         {
-
+            Cup Cup = new Cup();
+            Ice Ice = new Ice();
+            FlavorPacket FlavorPacket = new FlavorPacket();
+            
         }
-
-        //welcome them to the shop and offer them a list of things to buy. have quantities and use a for loop to add those objects to the player's Inventory.
         
-        public void SellToPlayer()
+        public void SellToPlayer(Player player)
         {
-            //something that sells items to the player.
+            
+            Console.WriteLine("Welcome to the Organic Milk Market!");
+            Console.WriteLine("We just so happen to only sell the exact items you need for your business...");
+            Console.WriteLine("How convenient!");
+            Console.WriteLine("Please type the corresponding number of the item you wish to buy.");
+            Console.WriteLine("[1] 'Coding Farms' Single-Serve Organic Milk Carton - $1.00 (What? it's organic!!)");
+            Console.WriteLine("[2] Vanilla Flavor Packet - $0.25");
+            Console.WriteLine("[3] Fresh Spring Ice Cube - $0.01");
+            Console.WriteLine("[4] Classy Plastic Cup - $0.10");
+        
+            double CustomerChoice = Convert.ToInt32(Console.ReadLine());
+
+            if (CustomerChoice == 1)
+            {
+                Console.WriteLine("Please enter (in numerals) how many milk cartons you would like to purchase.");
+                Console.WriteLine("Hint: Ten cartons will fill a pitcher, and a pitcher serves 10 people.");
+                double NumberofCartons = Convert.ToInt32(Console.ReadLine());
+                for (int i = 0; i < NumberofCartons; i++)
+                {
+                    MilkCarton milkCarton = new MilkCarton();
+                    player.PlayerInventory.Add(milkCarton);
+                }
+                
+            }
+                    
+
+            else if (CustomerChoice == 2)
+            {
+                Console.WriteLine("Please enter how many flavor packets you would like to purchase.");
+                Console.WriteLine("Hint: If you add too few or too many packets per pitcher, the customers won't like your product.");
+                double NumberofPackets = Convert.ToInt32(Console.ReadLine());
+                for (int i = 0; i < NumberofPackets; i++)
+                {
+                    FlavorPacket flavorPacket = new FlavorPacket();
+                    player.PlayerInventory.Add(flavorPacket);
+                }
+
+            }   
+              
+            else if (CustomerChoice == 3)
+            {
+                Console.WriteLine("Please enter how many ice cubes you would like to purchase.");
+                double NumberofCubes = Convert.ToInt32(Console.ReadLine());
+                for (int i = 0; i < NumberofCubes; i++)
+                {
+                    Ice iceCube = new Ice();
+                    player.PlayerInventory.Add(iceCube);
+                }
+
+            }     
+            
+            else if (CustomerChoice == 4)
+            {
+                Console.WriteLine("Please enter how many cups you would like to purchase.");
+                Console.WriteLine("Hint: Buy as many cups as you can reasonably afford!");
+                double NumberofCups = Convert.ToInt32(Console.ReadLine());
+                for (int i = 0; i < NumberofCups; i++)
+                {
+                    Cup cup = new Cup();
+                    player.PlayerInventory.Add(cup);
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("We literally don't sell anything else here. Please only enter 1, 2, 3, or 4.");
+                SellToPlayer(player);
+            }    
+
         }
     }
 }

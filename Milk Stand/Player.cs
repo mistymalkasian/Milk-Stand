@@ -8,18 +8,21 @@ namespace Milk_Stand
 {
     class Player
     {
-        //member variables
-        double wallet;
+        double money;
+        double recipe;
+        public List<Inventory> PlayerInventory = new List<Inventory>();
+
+
 
 
         public Player()
         {
-            Inventory Inventory = new Inventory();
-        }
-
-        public void AddtoWallet()
-        {
+            
 
         }
+
+
+
+
     }
 }

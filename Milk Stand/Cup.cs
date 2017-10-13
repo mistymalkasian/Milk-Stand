@@ -8,5 +8,9 @@ namespace Milk_Stand
 {
     class Cup : Inventory
     {
+        public Cup()
+        {
+            price = 0.10;
+        }
     }
 }

@@ -8,14 +8,13 @@ namespace Milk_Stand
 {
     class Inventory
     {
-        double price;
+        protected double price;
 
         public Inventory()
         {
-            Cup Cup = new Cup();
-            Ice Ice = new Ice();
-            FlavorPacket FlavorPacket = new FlavorPacket();
-            MilkCarton MilkCarton = new MilkCarton();
+           
         }
+
+
     }
 }
