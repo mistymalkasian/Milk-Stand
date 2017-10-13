@@ -15,12 +15,14 @@ namespace Milk_Stand
             Customer Customer = new Customer("hello", 4);
             Day Day1 = new Day("Sunday");
             
+            
                     
 
             Game.DisplayRules();
            
-            Weather.DisplayWeather(Day1);
+            
             Weather.DetermineForecast();
+           // Weather.DisplayWeather("Sunday");
             Customer.CustomerGenerator(Day1);
             
 

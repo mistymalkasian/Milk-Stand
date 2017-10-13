@@ -20,12 +20,7 @@ namespace Milk_Stand
         }
 
         public void DetermineForecast()
-        {
-
-
-
-
-
+        { 
             string[] WeatherTypes = new string[5];
 
             WeatherTypes[0] = "Rainy";
@@ -36,22 +31,24 @@ namespace Milk_Stand
             string Forecast = Convert.ToString(WeatherTypes[Random.Next(0, 4)]);
             Console.WriteLine("FORECAST");
             Console.WriteLine("Tomorrow's weather will be: " + Forecast);
-
+            DisplayWeather(Forecast);
+            
         }
 
         Random Random = new Random();
 
 
-        public void DisplayWeather(Day day)
-        {
-            //CurrentWeather = Convert.ToString(Random.Next(1, 5));
-
+        public void DisplayDay(Day day)
+        { 
             Console.WriteLine("Today is " + day.name + "!");
+        }    
+        
+         public void DisplayWeather(string Forecast)
+        {
             Console.WriteLine("WEATHER NEWS");
-            Console.WriteLine("Today's weather is:" + Forecast);
-
+            Console.WriteLine("Today's weather is: " + Forecast);
             Console.ReadLine();
-        }        
+        }   
     }
   
     //public void WeatherMultiplier(int Number)
