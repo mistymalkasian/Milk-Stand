@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Milk_Stand
 {
-    class Cup : Inventory
+    class Sugar
     {
-        public Cup()
-        {
-            price = 0.05;
-        }
     }
 }

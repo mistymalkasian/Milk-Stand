@@ -23,9 +23,9 @@ namespace Milk_Stand
             Console.WriteLine("We just so happen to only sell the exact items you need for your business...");
             Console.WriteLine("How convenient!");
             Console.WriteLine("Please type the corresponding number of the item you wish to buy.");
-            Console.WriteLine("[1] 'Coding Farms' Single-Serve Organic Milk Carton - $1.00 (What? it's organic!!)");
+            Console.WriteLine("[1] 'Code Farms' Single-Serve Organic Milk Carton - $1.00 (What? it's organic!!)");
             Console.WriteLine("[2] Vanilla Flavor Packet - $0.25");
-            Console.WriteLine("[3] Fresh Spring Ice Cube - $0.01");
+            Console.WriteLine("[3] 'Silicon Spring' Ice Cube - $0.01");
             Console.WriteLine("[4] Classy Plastic Cup - $0.10");
         
             double CustomerChoice = Convert.ToInt32(Console.ReadLine());
