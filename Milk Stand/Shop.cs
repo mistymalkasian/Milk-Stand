@@ -25,8 +25,9 @@ namespace Milk_Stand
             Console.WriteLine("Please type the corresponding number of the item you wish to buy.");
             Console.WriteLine("[1] 'Code Farms' Single-Serve Organic Milk Carton - $1.00 (What? it's organic!!)");
             Console.WriteLine("[2] Vanilla Flavor Packet - $0.25");
-            Console.WriteLine("[3] 'Silicon Spring' Ice Cube - $0.01");
-            Console.WriteLine("[4] Classy Plastic Cup - $0.10");
+            Console.WriteLine("[3] Raw Cane Sugar Packet - $0.10");
+            Console.WriteLine("[4] 'Silicon Spring' Ice Cube - $0.01");
+            Console.WriteLine("[5] Classy Plastic Cup - $0.05");
         
             double CustomerChoice = Convert.ToInt32(Console.ReadLine());
 
@@ -56,8 +57,20 @@ namespace Milk_Stand
                 }
 
             }   
-              
+
             else if (CustomerChoice == 3)
+            {
+                Console.WriteLine("Please enter how many sugar packets you would like to purchase.");
+                Console.WriteLine("Hint: If you add too few or too many packets per pitcher, the customers won't like your product.");
+                double NumberofSugars = Convert.ToInt32(Console.ReadLine());
+                for (int i = 0; i < NumberofSugars; i++)
+                {
+                    FlavorPacket flavorPacket = new FlavorPacket();
+                    player.PlayerInventory.Add(flavorPacket);
+                }
+            }
+              
+            else if (CustomerChoice == 4)
             {
                 Console.WriteLine("Please enter how many ice cubes you would like to purchase.");
                 double NumberofCubes = Convert.ToInt32(Console.ReadLine());
@@ -69,7 +82,7 @@ namespace Milk_Stand
 
             }     
             
-            else if (CustomerChoice == 4)
+            else if (CustomerChoice == 5)
             {
                 Console.WriteLine("Please enter how many cups you would like to purchase.");
                 Console.WriteLine("Hint: Buy as many cups as you can reasonably afford!");
@@ -83,7 +96,7 @@ namespace Milk_Stand
             }
             else
             {
-                Console.WriteLine("We literally don't sell anything else here. Please only enter 1, 2, 3, or 4.");
+                Console.WriteLine("We literally don't sell anything else here. Please only enter 1, 2, 3, 4, or 5.");
                 SellToPlayer(player);
             }    
 

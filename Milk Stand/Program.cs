@@ -16,6 +16,7 @@ namespace Milk_Stand
             Day Day1 = new Day("Sunday");
             Shop Shop = new Shop();
             Player player = new Player();
+            Recipe recipe = new Recipe();
             
             
                     
@@ -27,7 +28,7 @@ namespace Milk_Stand
             Weather.DisplayWeather(Weather.Forecast);
             Weather.DetermineForecast();
             Weather.DisplayWeather(Weather.Forecast);
-            Customer.CustomerGenerator(Weather);
+            Customer.CustomerGenerator(Weather, recipe);
             
             
 

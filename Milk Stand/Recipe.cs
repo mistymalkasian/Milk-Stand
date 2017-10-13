@@ -14,6 +14,8 @@ namespace Milk_Stand
         double AmountofCubes;
         double AmountofSugar;
         public bool IsGood;
+        public double price;
+        public bool IsHigh;
 
         public Recipe()
         {
@@ -38,47 +40,44 @@ namespace Milk_Stand
             Console.WriteLine("How many ice cubes would you like to add to each cup?");
             AmountofCubes = Convert.ToInt32(Console.ReadLine());
 
+        }
+        
+        public void SetPrice()
+        {
+            Console.WriteLine("What price will you make each cup today?");
+            price = Convert.ToInt32(Console.ReadLine());
         }    
        
-public void DetermineIfRecipeIsGood()
+    public void DetermineIfRecipeIsGood()
         {
-            if (AmountofFlavor <= 2)
+            if (AmountofFlavor <= 2 || AmountofFlavor >= 6 || AmountofSugar <= 5 || AmountofSugar >= 10 || AmountofCubes <= 2 || AmountofCubes >= 5)
             {
                 IsGood = false;
             }
-            else if (AmountofFlavor >= 6)
-            {
-                IsGood = false;
-            }
-
-            else if (AmountofSugar <= 5)
-            {
-                IsGood = false;
-            }
-            else if (AmountofSugar >= 10)
-            {
-                IsGood = false;
-            }
-            else if  (AmountofCubes <= 2)
-            {
-                IsGood = false;
-            }
-            else if (AmountofCubes >= 5)
-            {
-                IsGood = false;
-            }
+       
             else
             {
                 IsGood = true;
             }
         }
 
+        public void DetermineIfPriceIsHigh()
+        {
+            if (price >= 2.50)
+            {
+                IsHigh = true;
+            }
+            else
+            {
+                IsHigh = false;
+            }
+        }
 
-        public void RecipeMultiplier()
+        public void RecipeMultiplier(Customer customer)
         {
             if (IsGood == true)
             {
-                ChanceToBuy += 20;
+                customer.ChancetoBuy += 25;
             }
         }
     }
