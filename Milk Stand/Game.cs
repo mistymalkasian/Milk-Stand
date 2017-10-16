@@ -17,8 +17,6 @@ namespace Milk_Stand
        public void DisplayRules()
         {
             Console.WriteLine("You have decided to open your own Milk Stand!");
-            Console.WriteLine("In this game, wow your customers with your selection of fine gourmet flavored milks,");
-            Console.WriteLine("and your discerning business skillz.");
             Console.WriteLine("The rules are thus:");
             Console.WriteLine("");
             Console.WriteLine("");
@@ -28,13 +26,16 @@ namespace Milk_Stand
         }
 
 
+    public void RunGame(Player player, Shop shop, Weather weather, Day day)
+        {
 
-
-
-
-
-
-
-
+            day.DisplayDay(day);
+            weather.DetermineForecast();
+            weather.DisplayWeather(weather.Forecast);
+            shop.SellToPlayer(player);
+            
+            
+            //Customer.CustomerGenerator(Weather, recipe);
+        }
     }
 }

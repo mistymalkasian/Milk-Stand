@@ -17,10 +17,7 @@ namespace Milk_Stand
             Random Random = new Random();           
         }
 
-        public void DisplayDay(Day day)
-        {
-            Console.WriteLine("Today is " + day.name + "!");
-        }
+       
 
         public void DetermineForecast()
         { 

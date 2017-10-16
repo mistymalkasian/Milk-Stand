@@ -10,21 +10,32 @@ namespace Milk_Stand
     {
         public Shop()
         {
-            Cup Cup = new Cup();
-            Ice Ice = new Ice();
-            FlavorPacket FlavorPacket = new FlavorPacket();
-            
+            //Shop Shop = new Shop();
         }
         
+        public void AskToShop(Player player)
+        {
+            Console.WriteLine("Type 'yes' if you'd like to go to the shop.");
+           string answer = Console.ReadLine();
+
+            switch(answer)
+            {
+                case "yes":
+                    SellToPlayer(player);
+                    break;
+                default:
+                    break;
+            }
+        }
         public void SellToPlayer(Player player)
         {
             
-            Console.WriteLine("Welcome to the Organic Milk Market!");
+            Console.WriteLine("Welcome to Dairy King!");
             Console.WriteLine("We just so happen to only sell the exact items you need for your business...");
             Console.WriteLine("How convenient!");
             Console.WriteLine("Please type the corresponding number of the item you wish to buy.");
-            Console.WriteLine("[1] 'Code Farms' Single-Serve Organic Milk Carton - $1.00 (What? it's organic!!)");
-            Console.WriteLine("[2] Vanilla Flavor Packet - $0.25");
+            Console.WriteLine("[1] 'Code Farms' Single-Serve Organic Milk Carton - $1.00");
+            Console.WriteLine("[2] Vanilla Flavor Syrup - $0.25");
             Console.WriteLine("[3] Raw Cane Sugar Packet - $0.10");
             Console.WriteLine("[4] 'Silicon Spring' Ice Cube - $0.01");
             Console.WriteLine("[5] Classy Plastic Cup - $0.05");
@@ -52,8 +63,8 @@ namespace Milk_Stand
                 double NumberofPackets = Convert.ToInt32(Console.ReadLine());
                 for (int i = 0; i < NumberofPackets; i++)
                 {
-                    FlavorPacket flavorPacket = new FlavorPacket();
-                    player.PlayerInventory.Add(flavorPacket);
+                    FlavorSyrup flavorSyrup = new FlavorSyrup();
+                    player.PlayerInventory.Add(flavorSyrup);
                 }
 
             }   
@@ -65,8 +76,8 @@ namespace Milk_Stand
                 double NumberofSugars = Convert.ToInt32(Console.ReadLine());
                 for (int i = 0; i < NumberofSugars; i++)
                 {
-                    FlavorPacket flavorPacket = new FlavorPacket();
-                    player.PlayerInventory.Add(flavorPacket);
+                    Sugar sugarPacket = new Sugar();
+                    player.PlayerInventory.Add(sugarPacket);
                 }
             }
               

@@ -11,32 +11,19 @@ namespace Milk_Stand
         static void Main(string[] args)
         {
             Game Game = new Game();
-            Weather Weather = new Weather();
-            Customer Customer = new Customer("hello", 4);
+            Weather Weather = new Weather(); 
             Day Day1 = new Day("Sunday");
             Shop Shop = new Shop();
-            Player player = new Player();
-            Recipe recipe = new Recipe();
-            
-            
-                    
+            Player Player = new Player();
+            Recipe Recipe = new Recipe();
+            Customer Customer = new Customer();
+           
+
 
             Game.DisplayRules();
-            Shop.SellToPlayer(player);
-           
-            Weather.DetermineForecast();
-            Weather.DisplayWeather(Weather.Forecast);
-            Weather.DetermineForecast();
-            Weather.DisplayWeather(Weather.Forecast);
-            Customer.CustomerGenerator(Weather, recipe);
+            Game.RunGame(Player, Shop, Weather, Day1);
+            //customer.CustomerGenerator();
             
-            
-
-            
-
-
-
-
         }
     }
 }

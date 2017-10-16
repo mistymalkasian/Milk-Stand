@@ -11,193 +11,184 @@ namespace Milk_Stand
     {
 
         public string Name;
-        double Thirst;
+        public double Thirst;
+        public string Type;
         public double ChancetoBuy;
-
+        
        Random Random = new Random();
 
 
-        public Customer(string name, double Thirst)
+        public Customer(/*string Type, string Name, double Thirst*/)
         {
-            this.Name = name;
-            this.Thirst = Thirst;
-            this.ChancetoBuy = 30;
-            
+            //this.Name = Name;
+            //this.Thirst = Thirst;
+            //this.ChancetoBuy = 25;
+            //this.Type = Type;
         }
 
-       public void DetermineWhoBuys(Customer customer, Weather weather, Recipe recipe)
+
+        public string DetermineCustomerType()
         {
-            if (weather.CurrentWeather == "Sunny" || weather.CurrentWeather == "HOT!" && customer.Thirst >= 3 || recipe.IsGood == true || recipe.IsHigh == false)
-            {
-                string[] Reasons = new string[5];
+            string[] Types = new string[21];
 
-                Reasons[0] = " buys some Milk because it's hot outside!";
-                Reasons[1] = " buys some Milk because they are thirsty!";
-                Reasons[2] = " buys some Milk because the recipe is great!";
-                Reasons[3] = " buys some Milk because they are feeling sorry for you!";
-                Reasons[4] = " buys some Milk because the price is reasonable!";
+            Types[0] = "Youngster ";
+            Types[1] = "Battle Girl ";
+            Types[2] = "Madame ";
+            Types[3] = "Swimmer ";
+            Types[4] = "Ace Trainer ";
+            Types[5] = "Athlete ";
+            Types[6] = "Backpacker ";
+            Types[7] = "Parasol Lady ";
+            Types[8] = "Poke Fan ";
+            Types[9] = "Poke Maniac ";
+            Types[10] = "Nursery Aide ";
+            Types[11] = "Pokemon Breeder ";
+            Types[12] = "Bug Catcher ";
+            Types[13] = "Chef ";
+            Types[14] = "Interviewer ";
+            Types[15] = "Bodybuilder ";
+            Types[16] = "Comedian ";
+            Types[17] = "Biker ";
+            Types[18] = "Executive ";
+            Types[19] = "Expert ";
+            Types[20] = "Hiker ";
 
-                string ReasonForYes = Convert.ToString(Reasons[Random.Next(0, 5)]);
-                Console.WriteLine(ReasonForYes);
-                //add to player's money by amount specified at the start of the day (by the player) and take away from their current inventory supplies by the amount specified
-
-            }
-            else if (customer.Thirst <= 3 && weather.CurrentWeather== "Rainy" && recipe.IsGood == false && recipe.IsHigh == true)
-            {
-                string[] Reasons = new string[4];
-
-                Reasons[0] = " doesn't want to buy any Milk because the price is too high.";
-                Reasons[1] = " doesn't want to buy any Milk because they aren't thirsty enough.";
-                Reasons[2] = " doesn't want to buy any Milk because the recipe isn't good.";
-                Reasons[3] = " doesn't want to buy any Milk because of the weather.";
-               
-                string ReasonForNo = Convert.ToString(Reasons[Random.Next(0, 4)]);
-                Console.WriteLine(ReasonForNo);
-            }
-            else if (weather.CurrentWeather == "Hazy" || weather.CurrentWeather == "Cloudy")
-            {
-                Console.WriteLine(" buys a glass of Milk!");
-                   
-            }
-          else
-            {
-                Console.WriteLine(" supposes that they'll buy some Milk because why not!");
-            }
-           
+            string Type = Convert.ToString(Types[Random.Next(0, 21)]);
+            return Type;
         }
 
-        public void DetermineCustomerType(Customer Patron, Weather weather, Recipe recipe)
-        {
-            
-            int TypeChoice = Random.Next(1, 21);
+        public string DetermineCustomerName()
+        { 
+            string[] Names = new string[34];
 
+            Names[0] = "Bobette";
+            Names[1] = "Agnes";
+            Names[2] = "Ophelia";
+            Names[3] = "Gladys";
+            Names[4] = "Edwin";
+            Names[5] = "Edgar";
+            Names[6] = "Alan";
+            Names[7] = "Ambrose";
+            Names[8] = "Clara";
+            Names[9] = "Gertrude";
+            Names[10] = "Bessie";
+            Names[11] = "Cora";
+            Names[12] = "Alfred";
+            Names[13] = "Bessie";
+            Names[14] = "Bertha";
+            Names[15] = "Betty";
+            Names[16] = "Donald";
+            Names[17] = "Earl";
+            Names[18] = "Ethel";
+            Names[19] = "Eugene";
+            Names[20] = "Harold";
+            Names[21] = "Herbert";
+            Names[22] = "Hortense";
+            Names[23] = "Howard";
+            Names[24] = "Irma";
+            Names[25] = "Loretta";
+            Names[26] = "Marvin";
+            Names[27] = "Myrtle";
+            Names[28] = "Norman";
+            Names[29] = "Pearl";
+            Names[30] = "Seymour";
+            Names[31] = "Velma";
+            Names[32] = "Jean";
+            Names[33] = "Frances";
 
-            switch (TypeChoice)
-            {
-                case 1:
-                    Console.WriteLine("Youngster " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 2:
-                    Console.WriteLine("Battle Girl " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 3:
-                    Console.WriteLine("Madame " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 4:
-                    Console.WriteLine("Swimmer " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 5:
-                    Console.WriteLine("Ace Trainer " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 6:
-                    Console.WriteLine("Athlete " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 7:
-                    Console.WriteLine("Backpacker " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 8:
-                    Console.WriteLine("Parasol Lady " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 9:
-                    Console.WriteLine("Poke Fan " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 10:
-                    Console.WriteLine("Poke Maniac " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 11:
-                    Console.WriteLine("Nursery Aide " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 12:
-                    Console.WriteLine("Pokemon Breeder " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 13:
-                    Console.WriteLine("Bug Catcher " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 14:
-                    Console.WriteLine("Chef " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 15:
-                    Console.WriteLine("Interviewer " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 16:
-                    Console.WriteLine("Bodybuilder " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 17:
-                    Console.WriteLine("Comedian " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 18:
-                    Console.WriteLine("Biker " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 19:
-                    Console.WriteLine("Executive " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                case 20:
-                    Console.WriteLine("Expert " + Patron.Name);
-                    DetermineWhoBuys(Patron, weather, recipe);
-                    break;
-                default:
-                    break;
-            }
+            string name = Convert.ToString(Names[Random.Next(0, 34)]);
+            return name;
+
         }
 
-            public void CustomerGenerator(Weather weather, Recipe recipe)
+        public double DetermineCustomerThirst()
+        {
+            Thirst = Random.Next(1, 6);
+            return Thirst;
+        }
+
+       
+        public void CustomerGenerator(string Type, string Name)
 
         {
-            Customer Agnes = new Customer("Agnes", 2);
-            Customer Bobette = new Customer("Bobette", 4);
-            Customer Gertrude = new Customer("Gertrude", 3);
-            Customer UmaBob = new Customer("Uma Bob", 5);
-            Customer Edwin = new Customer("Edwin", 3);
-            Customer Winnifred = new Customer("Winnifred", 2);
-            Customer Jane = new Customer("Jane", 5);
-            Customer Chives = new Customer("Chives", 2);
-            Customer Gladys = new Customer("Gladys", 5);
-            Customer Deirdre = new Customer("Deirdre", 3);
-            Customer Laurie = new Customer("Laurie", 4);
-            Customer Ben = new Customer("Ben", 3);
-         
-
-            List<Customer> Patrons = new List<Customer>();
-            Patrons.Add(Agnes);
-            Patrons.Add(Bobette);
-            Patrons.Add(Gertrude);
-            Patrons.Add(UmaBob);
-            Patrons.Add(Edwin);
-            Patrons.Add(Winnifred);
-            Patrons.Add(Jane);
-            Patrons.Add(Chives);
-            Patrons.Add(Gladys);
-            Patrons.Add(Deirdre);
-            Patrons.Add(Laurie);
-            Patrons.Add(Ben);
-
-            foreach (Customer Patron in Patrons)
+            for (int i = 0; i < 101; i++)
             {
-                DetermineCustomerType(Patron, weather, recipe);
-              
+                Customer customer = new Customer();
+                DetermineCustomerType();
+                DetermineCustomerName();
+                DetermineCustomerThirst();
+                Console.WriteLine(Type, Name);
             }
+                
             Console.ReadLine();
         }
 
+        public void DetermineChanceToBuy(Customer customer, Weather weather, Recipe recipe)
+        {
+           
+            if (weather.CurrentWeather == "Rainy")
+            {
+                ChancetoBuy -= 10;
+            }
+            else if (weather.CurrentWeather == "Sunny")
+            {
+                ChancetoBuy += 10;
+            }
+            else if (weather.CurrentWeather == "HOT!")
+            {
+                ChancetoBuy += 15;
+            }
+            else if (customer.Thirst >= 3)
+            {
+                ChancetoBuy += 10;
+            }
+            else if (customer.Thirst <= 2)
+            {
+                ChancetoBuy -= 10;
+            }
+            else if (recipe.IsGood == true)
+            {
+                ChancetoBuy += 25;
+            } 
+            else if (recipe.IsGood == false)
+            {
+                ChancetoBuy -= 25;
+            }
+            else if (recipe.IsHigh == true)
+            {
+                ChancetoBuy -= 25;
+            }
+            else if (recipe.IsHigh == false)
+            {
+                ChancetoBuy += 25;
+            } 
         }
-    }
+
+
+        public void DetermineWhoBuys(double ChancetoBuy, Player player, Recipe recipe)
+        {
+            if (ChancetoBuy >= 70)
+            {
+                Console.WriteLine(" buys a glass of Milk!");
+                //MakePurchase(player, recipe);
+            }
+
+            else
+            {
+                Console.WriteLine(" doesn't buy anything!!!");
+            }
+            
+        }
+
+        //public void MakePurchase(Player player, Recipe recipe)
+        //{
+        //    player.money += recipe.price;
+        //    player.PlayerInventory -= recipe.AmountofCubes;
+        //    player.PlayerInventory -= recipe.AmountofSugar;
+        //    player.PlayerInventory -= recipe.AmountofFlavor;
+        //    player.PlayerInventory -= recipe.AmountofPitchers;
+        //}
+
+     }
+ }
 

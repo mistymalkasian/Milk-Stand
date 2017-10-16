@@ -9,43 +9,43 @@ namespace Milk_Stand
   
     class Recipe
     {
-        double AmountofPitchers;
-        double AmountofFlavor;
-        double AmountofCubes;
-        double AmountofSugar;
-        public bool IsGood;
-        public double price;
-        public bool IsHigh;
+       public double AmountofPitchers;
+       public double AmountofFlavor;
+       public double AmountofCubes;
+       public double AmountofSugar;
+       public bool IsGood;
+       public double price;
+       public bool IsHigh;
 
         public Recipe()
         {
-
+            //Recipe recipe = new Recipe();
         }
 
 
-  public void CreateRecipe()
+  public void CreateRecipe(Recipe recipe)
         {
             Console.WriteLine("Now it's time to create the recipe you want to use for the day.");
             Console.WriteLine("How many pitchers would you like to make? Remember that each pitcher uses up 10 milk cartons and serves 10 people.");
-            AmountofPitchers = Convert.ToInt32(Console.ReadLine());
+            recipe.AmountofPitchers = Convert.ToInt32(Console.ReadLine());
 
 
             Console.WriteLine("How many sugar packets would you like to add to the pitcher?");
-            AmountofSugar = Convert.ToInt32(Console.ReadLine());
+            recipe.AmountofSugar = Convert.ToInt32(Console.ReadLine());
 
 
-            Console.WriteLine("How many flavor packets would you like to add to the pitcher?");
-            AmountofFlavor = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("How many squirts of flavor syrup would you like to add to the pitcher?");
+            recipe.AmountofFlavor = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("How many ice cubes would you like to add to each cup?");
-            AmountofCubes = Convert.ToInt32(Console.ReadLine());
+            recipe.AmountofCubes = Convert.ToInt32(Console.ReadLine());
 
         }
         
-        public void SetPrice()
+        public void SetPrice(Recipe recipe)
         {
             Console.WriteLine("What price will you make each cup today?");
-            price = Convert.ToInt32(Console.ReadLine());
+            recipe.price = Convert.ToInt32(Console.ReadLine());
         }    
        
     public void DetermineIfRecipeIsGood()
@@ -70,14 +70,6 @@ namespace Milk_Stand
             else
             {
                 IsHigh = false;
-            }
-        }
-
-        public void RecipeMultiplier(Customer customer)
-        {
-            if (IsGood == true)
-            {
-                customer.ChancetoBuy += 25;
             }
         }
     }

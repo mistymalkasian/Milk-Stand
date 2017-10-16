@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Milk_Stand
 {
-    class FlavorPacket : Inventory
+    class FlavorSyrup : Inventory
     {
-        public FlavorPacket()
+        public FlavorSyrup()
         {
             price = 0.25;
         }
