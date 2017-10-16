@@ -9,28 +9,35 @@ namespace Milk_Stand
     class Day
     {
         public string name;
-        public string CurrentWeather;
+        
         Random Random = new Random();
-       
+        public List<Customer> TheDaysCustomers = new List<Customer>();
+
         public Day(string name)
         {
             this.name = name;
-            
-
-            //Weather Weather = new Weather();
-            //Day Day1 = new Day("Sunday");
-            //Day Day2 = new Day("Monday");
-            //Day Day3 = new Day("Tuesday");
-            //Day Day4 = new Day("Wednesday");
-            //Day Day5 = new Day("Thursday");
-            //Day Day6 = new Day("Friday");
-            //Day Day7 = new Day("Saturday");
 
         }
 
         public void DisplayDay(Day day)
         {
             Console.WriteLine("Today is " + day.name + "!");
+        }
+
+        public void CustomerGenerator()
+
+        {
+            for (int i = 0; i < 101; i++)
+            {
+                Customer customer = new Customer();
+                customer.DetermineCustomerType();
+                customer.DetermineCustomerName();
+                customer.DetermineCustomerThirst();
+                Console.WriteLine(customer.Type + customer.Name);
+                TheDaysCustomers.Add(customer);
+            }
+
+            Console.ReadLine();
         }
     }
  }

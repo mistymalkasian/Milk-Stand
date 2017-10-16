@@ -21,19 +21,19 @@ namespace Milk_Stand
         }
 
 
-    public void RunGame(Player player, Shop shop, Weather weather, Day day)
+    public void RunGame(Player player, Shop shop, Weather weather, Day day, Customer customer)
         {
-
+            day.CustomerGenerator();
             day.DisplayDay(day);
             weather.DetermineForecast();
             weather.DisplayWeather(weather.Forecast);
-
+            
             shop.SellToPlayer(player);
             player.DisplayMoney();
             player.DisplayInventory();
-            
-            
-            
+                       
         }
+
+   
     }
 }

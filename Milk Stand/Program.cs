@@ -21,7 +21,7 @@ namespace Milk_Stand
 
 
             Game.DisplayRules();
-            Game.RunGame(Player, Shop, Weather, Day1);
+            Game.RunGame(Player, Shop, Weather, Day1, Customer);
             //customer.CustomerGenerator();
             
         }

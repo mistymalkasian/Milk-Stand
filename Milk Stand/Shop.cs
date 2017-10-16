@@ -15,7 +15,7 @@ namespace Milk_Stand
         
         public void AskToShop(Player player)
         {
-            Console.WriteLine("Type 'yes' if you'd like to go to the shop.");
+            Console.WriteLine("Type 1 if you'd like to go to the shop. Otherwise, we'll begin making the day's recipe!");
            string answer = Console.ReadLine();
 
             switch(answer)
@@ -24,7 +24,7 @@ namespace Milk_Stand
                     SellToPlayer(player);
                     break;
                 default:
-
+                    //begin the day
                     break;
             }
         }
@@ -58,11 +58,9 @@ namespace Milk_Stand
                 
             }
                     
-
             else if (CustomerChoice == 2)
             {
                 Console.WriteLine("Please enter how many flavor packets you would like to purchase.");
-                Console.WriteLine("Hint: If you add too few or too many packets per pitcher, the customers won't like your product.");
                 double NumberofPackets = Convert.ToInt32(Console.ReadLine());
                 for (int i = 0; i < NumberofPackets; i++)
                 {
@@ -76,7 +74,6 @@ namespace Milk_Stand
             else if (CustomerChoice == 3)
             {
                 Console.WriteLine("Please enter how many sugar packets you would like to purchase.");
-                Console.WriteLine("Hint: If you add too few or too many packets per pitcher, the customers won't like your product.");
                 double NumberofSugars = Convert.ToInt32(Console.ReadLine());
                 for (int i = 0; i < NumberofSugars; i++)
                 {
@@ -111,14 +108,26 @@ namespace Milk_Stand
                     player.money -= Cup.price;
                     
                 }
-
             }
             else
             {
                 Console.WriteLine("We literally don't sell anything else here. Please only enter 1, 2, 3, 4, or 5.");
                 SellToPlayer(player);
-            }    
+            }
 
+            Console.WriteLine("Type 1 if you would like to buy another item. Otherwise we will begin making the day's recipe!");
+            int choice = Convert.ToInt32( Console.ReadLine());
+
+            switch(choice)
+            {
+                case 1:
+                    SellToPlayer(player);
+                    break;
+                default:
+                    //begin the day
+                    break;
+
+            }
         }
       
     }

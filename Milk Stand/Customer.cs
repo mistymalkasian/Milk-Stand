@@ -13,21 +13,17 @@ namespace Milk_Stand
         public string Name;
         public double Thirst;
         public string Type;
-        public double ChancetoBuy;
+        public double ChancetoBuy = 25;
         
        Random Random = new Random();
 
 
-        public Customer(/*string Type, string Name, double Thirst*/)
+        public Customer()
         {
-            //this.Name = Name;
-            //this.Thirst = Thirst;
-            //this.ChancetoBuy = 25;
-            //this.Type = Type;
+           
         }
 
-
-        public string DetermineCustomerType()
+        public void DetermineCustomerType()
         {
             string[] Types = new string[21];
 
@@ -53,11 +49,11 @@ namespace Milk_Stand
             Types[19] = "Expert ";
             Types[20] = "Hiker ";
 
-            string Type = Convert.ToString(Types[Random.Next(0, 21)]);
-            return Type;
+            Type = Convert.ToString(Types[Random.Next(0, 21)]);
+            
         }
 
-        public string DetermineCustomerName()
+        public void DetermineCustomerName()
         { 
             string[] Names = new string[34];
 
@@ -96,33 +92,17 @@ namespace Milk_Stand
             Names[32] = "Jean";
             Names[33] = "Frances";
 
-            string name = Convert.ToString(Names[Random.Next(0, 34)]);
-            return name;
+            Name = Convert.ToString(Names[Random.Next(0, 34)]);
+            
 
         }
 
-        public double DetermineCustomerThirst()
+        public void DetermineCustomerThirst()
         {
-            Thirst = Random.Next(1, 6);
-            return Thirst;
+            Thirst = Random.Next(1, 7);       
         }
 
        
-        public void CustomerGenerator(string Type, string Name)
-
-        {
-            for (int i = 0; i < 101; i++)
-            {
-                Customer customer = new Customer();
-                DetermineCustomerType();
-                DetermineCustomerName();
-                DetermineCustomerThirst();
-                Console.WriteLine(Type, Name);
-            }
-                
-            Console.ReadLine();
-        }
-
         public void DetermineChanceToBuy(Customer customer, Weather weather, Recipe recipe)
         {
            
@@ -138,11 +118,11 @@ namespace Milk_Stand
             {
                 ChancetoBuy += 15;
             }
-            else if (customer.Thirst >= 3)
+            else if (customer.Thirst >= 4)
             {
                 ChancetoBuy += 10;
             }
-            else if (customer.Thirst <= 2)
+            else if (customer.Thirst <= 3)
             {
                 ChancetoBuy -= 10;
             }
@@ -164,13 +144,12 @@ namespace Milk_Stand
             } 
         }
 
-
-        public void DetermineWhoBuys(double ChancetoBuy, Player player, Recipe recipe)
+        public void DetermineWhoBuys(Player player, Recipe recipe)
         {
             if (ChancetoBuy >= 70)
             {
                 Console.WriteLine(" buys a glass of Milk!");
-                //MakePurchase(player, recipe);
+                
             }
 
             else
@@ -179,15 +158,6 @@ namespace Milk_Stand
             }
             
         }
-
-        //public void MakePurchase(Player player, Recipe recipe)
-        //{
-        //    player.money += recipe.price;
-        //    player.PlayerInventory -= recipe.AmountofCubes;
-        //    player.PlayerInventory -= recipe.AmountofSugar;
-        //    player.PlayerInventory -= recipe.AmountofFlavor;
-        //    player.PlayerInventory -= recipe.AmountofPitchers;
-        //}
 
      }
  }
