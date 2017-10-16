@@ -9,12 +9,18 @@ namespace Milk_Stand
     class Inventory
     {
         protected double price;
+        public List<MilkCarton> MilkCartons = new List<MilkCarton>();
+        public List<Cup> Cups = new List<Cup>();
+        public List<Ice> IceCubes = new List<Ice>();
+        public List<Sugar> SugarPackets = new List<Sugar>();
+        public List<FlavorSyrup> FlavorSyrups = new List<FlavorSyrup>();
 
-        public Inventory()
-        {
-           
-        }
 
 
+        public Inventory ()
+	{
+
+    }
+      
     }
 }

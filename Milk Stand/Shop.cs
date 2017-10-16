@@ -10,7 +10,7 @@ namespace Milk_Stand
     {
         public Shop()
         {
-            //Shop Shop = new Shop();
+            
         }
         
         public void AskToShop(Player player)
@@ -24,6 +24,7 @@ namespace Milk_Stand
                     SellToPlayer(player);
                     break;
                 default:
+
                     break;
             }
         }
@@ -49,8 +50,8 @@ namespace Milk_Stand
                 double NumberofCartons = Convert.ToInt32(Console.ReadLine());
                 for (int i = 0; i < NumberofCartons; i++)
                 {
-                    MilkCarton milkCarton = new MilkCarton();
-                    player.PlayerInventory.Add(milkCarton);
+                    MilkCarton MilkCarton = new MilkCarton();
+                    player.PlayerInventory.MilkCartons.Add(MilkCarton);
                 }
                 
             }
@@ -63,8 +64,8 @@ namespace Milk_Stand
                 double NumberofPackets = Convert.ToInt32(Console.ReadLine());
                 for (int i = 0; i < NumberofPackets; i++)
                 {
-                    FlavorSyrup flavorSyrup = new FlavorSyrup();
-                    player.PlayerInventory.Add(flavorSyrup);
+                    FlavorSyrup FlavorSyrup = new FlavorSyrup();
+                    player.PlayerInventory.FlavorSyrups.Add(FlavorSyrup);
                 }
 
             }   
@@ -76,8 +77,8 @@ namespace Milk_Stand
                 double NumberofSugars = Convert.ToInt32(Console.ReadLine());
                 for (int i = 0; i < NumberofSugars; i++)
                 {
-                    Sugar sugarPacket = new Sugar();
-                    player.PlayerInventory.Add(sugarPacket);
+                    Sugar SugarPacket = new Sugar();
+                    player.PlayerInventory.SugarPackets.Add(SugarPacket);
                 }
             }
               
@@ -87,8 +88,8 @@ namespace Milk_Stand
                 double NumberofCubes = Convert.ToInt32(Console.ReadLine());
                 for (int i = 0; i < NumberofCubes; i++)
                 {
-                    Ice iceCube = new Ice();
-                    player.PlayerInventory.Add(iceCube);
+                    Ice IceCube = new Ice();
+                    player.PlayerInventory.IceCubes.Add(IceCube);
                 }
 
             }     
@@ -100,8 +101,8 @@ namespace Milk_Stand
                 double NumberofCups = Convert.ToInt32(Console.ReadLine());
                 for (int i = 0; i < NumberofCups; i++)
                 {
-                    Cup cup = new Cup();
-                    player.PlayerInventory.Add(cup);
+                    Cup Cup = new Cup();
+                    player.PlayerInventory.Cups.Add(Cup);
                 }
 
             }

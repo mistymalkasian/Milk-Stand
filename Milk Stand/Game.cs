@@ -8,11 +8,6 @@ namespace Milk_Stand
 {
     class Game
     {
-        //member variables
-
-        //constructor
-
-        //member methods
 
        public void DisplayRules()
         {
@@ -32,10 +27,13 @@ namespace Milk_Stand
             day.DisplayDay(day);
             weather.DetermineForecast();
             weather.DisplayWeather(weather.Forecast);
+
             shop.SellToPlayer(player);
+            player.DisplayMoney();
+            player.DisplayInventory();
             
             
-            //Customer.CustomerGenerator(Weather, recipe);
+            
         }
     }
 }
