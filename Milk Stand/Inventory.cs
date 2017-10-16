@@ -8,7 +8,7 @@ namespace Milk_Stand
 {
     class Inventory
     {
-        protected double price;
+        public double price;
         public List<MilkCarton> MilkCartons = new List<MilkCarton>();
         public List<Cup> Cups = new List<Cup>();
         public List<Ice> IceCubes = new List<Ice>();

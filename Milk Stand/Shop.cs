@@ -52,6 +52,8 @@ namespace Milk_Stand
                 {
                     MilkCarton MilkCarton = new MilkCarton();
                     player.PlayerInventory.MilkCartons.Add(MilkCarton);
+                    player.money -= MilkCarton.price;
+
                 }
                 
             }
@@ -66,6 +68,7 @@ namespace Milk_Stand
                 {
                     FlavorSyrup FlavorSyrup = new FlavorSyrup();
                     player.PlayerInventory.FlavorSyrups.Add(FlavorSyrup);
+                    player.money -= FlavorSyrup.price;
                 }
 
             }   
@@ -79,6 +82,7 @@ namespace Milk_Stand
                 {
                     Sugar SugarPacket = new Sugar();
                     player.PlayerInventory.SugarPackets.Add(SugarPacket);
+                    player.money -= SugarPacket.price;
                 }
             }
               
@@ -90,6 +94,7 @@ namespace Milk_Stand
                 {
                     Ice IceCube = new Ice();
                     player.PlayerInventory.IceCubes.Add(IceCube);
+                    player.money -= IceCube.price;
                 }
 
             }     
@@ -103,6 +108,8 @@ namespace Milk_Stand
                 {
                     Cup Cup = new Cup();
                     player.PlayerInventory.Cups.Add(Cup);
+                    player.money -= Cup.price;
+                    
                 }
 
             }
@@ -113,5 +120,6 @@ namespace Milk_Stand
             }    
 
         }
+      
     }
 }
