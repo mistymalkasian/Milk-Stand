@@ -136,15 +136,15 @@ namespace Milk_Stand
             } 
         }
 
-        public void DetermineWhoBuys(Player player, Recipe recipe)
+        public void DetermineWhoBuys(Player player, Recipe recipe, Day day) //put in a check to make sure enough milk exists before buying
         {
-            if (ChancetoBuy >= 70)
+            if (ChancetoBuy >= 75)
             {
                 Console.WriteLine(" buys TWO glasses of Milk!!!");
                 MakePurchase(player, recipe);
                 MakePurchase(player, recipe); 
             }
-            else if (ChancetoBuy >= 40 && ChancetoBuy <= 69)
+            else if (ChancetoBuy >= 50 && ChancetoBuy <= 74)
                 {
                 Console.WriteLine(" buys a glass of Milk!");
                 MakePurchase(player, recipe);
@@ -158,6 +158,7 @@ namespace Milk_Stand
        public void MakePurchase(Player player, Recipe recipe)
         {
             player.money += recipe.price;
+            player.AllEarnings.Add(player.DaysEarnings += recipe.price);
         }
      }
  }

@@ -8,12 +8,12 @@ namespace Milk_Stand
 {
     class Day
     {
-        public double DaysEarnings;
         public string weather;
         public int CurrentDay;
         public Random Random = new Random();
         Recipe Recipe = new Recipe();
         public List<Customer> TheDaysCustomers = new List<Customer>();
+        
 
         public Day()
         {
@@ -32,16 +32,9 @@ namespace Milk_Stand
                 Console.WriteLine(customer.Type + customer.Name);
                 TheDaysCustomers.Add(customer);
                 customer.DetermineChanceToBuy(customer, weather, recipe);
-                customer.DetermineWhoBuys(player, recipe);
+                customer.DetermineWhoBuys(player, recipe, day);
             }
             Console.ReadLine();
-        }
-
-        public void DisplayEndofDayReport(Player player, Day day)
-        {
-            Console.WriteLine("END OF DAY REPORT:");
-            Console.WriteLine("You have made $" + day.DaysEarnings + " today.");
-            Console.WriteLine("Your total money is : $" + player.money);
         }
     }
  }

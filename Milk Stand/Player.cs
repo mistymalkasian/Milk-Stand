@@ -10,8 +10,10 @@ namespace Milk_Stand
     {
         public double money;
         public double TotalEarnings;
+        public double DaysEarnings;
         public Inventory PlayerInventory;
-        
+        public List<double> AllEarnings = new List<double>();
+
 
         public Player()
         {

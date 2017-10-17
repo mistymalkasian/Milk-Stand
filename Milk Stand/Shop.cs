@@ -11,23 +11,8 @@ namespace Milk_Stand
         public Shop()
         {
             
-        }        
-        public void AskToShop(Player player, Recipe recipe)
-        {
-            Console.WriteLine("Type 1 if you'd like to go to the shop. Otherwise, we'll begin making the day's recipe!");
-           string answer = Console.ReadLine();
-
-            switch(answer)
-            {
-                case "yes":
-                    SellToPlayer(player);
-                    break;
-                default:
-                    player.CreateRecipe(recipe);
-                    break;
-            }
-        }
-        public void SellToPlayer(Player player)
+        }              
+        public void SellToPlayer(Player player, Recipe recipe)
         {            
             Console.WriteLine("Welcome to Dairy King!");
             Console.WriteLine("We just so happen to only sell the exact items you need for your business...");
@@ -58,7 +43,9 @@ namespace Milk_Stand
                         player.PlayerInventory.MilkCartons.Add(MilkCarton);
                         player.money -= MilkCarton.price;
                     }
-                }               
+                }
+                player.DisplayInventory();
+                player.DisplayMoney();
             }
                     
             else if (CustomerChoice == 2)
@@ -78,9 +65,10 @@ namespace Milk_Stand
                         player.money -= FlavorSyrup.price;
                     }
                 }
-           }
+                player.DisplayInventory();
+                player.DisplayMoney();
+            }
               
-
             else if (CustomerChoice == 3)
             {
                 Console.WriteLine("Please enter how many sugar packets you would like to purchase.");
@@ -96,9 +84,10 @@ namespace Milk_Stand
                     {
                         player.PlayerInventory.SugarPackets.Add(SugarPacket);
                         player.money -= SugarPacket.price;
-                    }
-                    
+                    }  
                 }
+                player.DisplayInventory();
+                player.DisplayMoney();
             }
               
             else if (CustomerChoice == 4)
@@ -118,6 +107,8 @@ namespace Milk_Stand
                         player.money -= IceCube.price;
                     }              
                 }
+                player.DisplayInventory();
+                player.DisplayMoney();
             }     
             
             else if (CustomerChoice == 5)
@@ -136,29 +127,41 @@ namespace Milk_Stand
                     {
                         player.PlayerInventory.Cups.Add(Cup);
                         player.money -= Cup.price;
-                    }
-                    
-                    
+                    }                    
                 }
+                player.DisplayInventory();
+                player.DisplayMoney();
             }
             else
             {
                 Console.WriteLine("We literally don't sell anything else here. Please only enter 1, 2, 3, 4, or 5.");
-                SellToPlayer(player);
+                SellToPlayer(player, recipe);
             }
 
-            Console.WriteLine("Type 1 if you would like to buy another item. Otherwise we will begin making the day's recipe!");
-            int input = Convert.ToInt32( Console.ReadLine());
-
-            switch(input)
+            Console.WriteLine("Type 1 if you would like to buy another item. Otherwise press 2 to begin making the day's recipe!");
+            try
             {
-                case 1:
-                    SellToPlayer(player);
-                    break;
-                default:
-                    break;
+                int input = Convert.ToInt32(Console.ReadLine());
 
+                switch (input)
+                {
+                    case 1:
+                        SellToPlayer(player, recipe);
+                        break;
+                    case 2:
+                        player.CreateRecipe(recipe);
+                        break;
+                    default:
+                        player.CreateRecipe(recipe);
+                        break;
+
+                }
             }
+            catch(Exception)
+            {
+                Console.WriteLine("Invalid input, please only enter 1 or 2!");
+            }
+
         }    
     }
 }

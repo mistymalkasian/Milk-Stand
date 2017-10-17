@@ -19,7 +19,7 @@ namespace Milk_Stand
 
             Game.DisplayRules();
             Game.RunGame(Player, Shop, Weather, Customer, Recipe);
-            Game.DisplayEndgameResults();           
+            Game.DisplayEndgameResults(Player);         
         }
     }
 }
