@@ -35,8 +35,6 @@ namespace Milk_Stand
                 day.GenerateCustomers(player, weather, recipe);
                 day.DisplayEndofDayReport();
             }
-           
-
         }
         
        public void DisplayEndgameResults()

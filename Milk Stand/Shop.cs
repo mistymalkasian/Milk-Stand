@@ -23,7 +23,7 @@ namespace Milk_Stand
                     SellToPlayer(player);
                     break;
                 default:
-                    recipe.CreateRecipe(player);
+                    player.CreateRecipe(recipe);
                     break;
             }
         }
@@ -46,12 +46,18 @@ namespace Milk_Stand
                 Console.WriteLine("Please enter (in numerals) how many milk cartons you would like to purchase.");
                 Console.WriteLine("Hint: Ten cartons will fill a pitcher, and a pitcher serves 10 people.");
                 double NumberofCartons = Convert.ToInt32(Console.ReadLine());
-                for (int i = 0; i < NumberofCartons; i++)
+                    for (int i = 0; i < NumberofCartons; i++)
                 {
                     MilkCarton MilkCarton = new MilkCarton();
-                    player.PlayerInventory.MilkCartons.Add(MilkCarton);
-                    player.money -= MilkCarton.price;
-
+                    if (player.money < MilkCarton.price)
+                    {
+                        Console.WriteLine("You don't have enough money to buy any more of these!");
+                    }
+                    else
+                    {
+                        player.PlayerInventory.MilkCartons.Add(MilkCarton);
+                        player.money -= MilkCarton.price;
+                    }
                 }               
             }
                     
@@ -62,10 +68,18 @@ namespace Milk_Stand
                 for (int i = 0; i < NumberofPackets; i++)
                 {
                     FlavorSyrup FlavorSyrup = new FlavorSyrup();
-                    player.PlayerInventory.FlavorSyrups.Add(FlavorSyrup);
-                    player.money -= FlavorSyrup.price;
+                    if (player.money < FlavorSyrup.price)
+                    {
+                        Console.WriteLine("You don't have enough money to buy any more of these!");
+                    }
+                    else
+                    {
+                        player.PlayerInventory.FlavorSyrups.Add(FlavorSyrup);
+                        player.money -= FlavorSyrup.price;
+                    }
                 }
-            }   
+           }
+              
 
             else if (CustomerChoice == 3)
             {
@@ -74,8 +88,16 @@ namespace Milk_Stand
                 for (int i = 0; i < NumberofSugars; i++)
                 {
                     Sugar SugarPacket = new Sugar();
-                    player.PlayerInventory.SugarPackets.Add(SugarPacket);
-                    player.money -= SugarPacket.price;
+                    if (player.money < SugarPacket.price)
+                    {
+                        Console.WriteLine("You don't have enough money to buy any more of these!");
+                    }
+                    else
+                    {
+                        player.PlayerInventory.SugarPackets.Add(SugarPacket);
+                        player.money -= SugarPacket.price;
+                    }
+                    
                 }
             }
               
@@ -86,8 +108,15 @@ namespace Milk_Stand
                 for (int i = 0; i < NumberofCubes; i++)
                 {
                     Ice IceCube = new Ice();
-                    player.PlayerInventory.IceCubes.Add(IceCube);
-                    player.money -= IceCube.price;
+                    if (player.money < IceCube.price)
+                    {
+                        Console.WriteLine("You don't have enough money to buy any more of these!");
+                    }
+                    else
+                    {
+                        player.PlayerInventory.IceCubes.Add(IceCube);
+                        player.money -= IceCube.price;
+                    }              
                 }
             }     
             
@@ -99,8 +128,16 @@ namespace Milk_Stand
                 for (int i = 0; i < NumberofCups; i++)
                 {
                     Cup Cup = new Cup();
-                    player.PlayerInventory.Cups.Add(Cup);
-                    player.money -= Cup.price;
+                    if (player.money < Cup.price)
+                    {
+                       Console.WriteLine("You don't have enough money to buy any more of these!");
+                    }
+                    else
+                    {
+                        player.PlayerInventory.Cups.Add(Cup);
+                        player.money -= Cup.price;
+                    }
+                    
                     
                 }
             }
@@ -111,15 +148,14 @@ namespace Milk_Stand
             }
 
             Console.WriteLine("Type 1 if you would like to buy another item. Otherwise we will begin making the day's recipe!");
-            int choice = Convert.ToInt32( Console.ReadLine());
+            int input = Convert.ToInt32( Console.ReadLine());
 
-            switch(choice)
+            switch(input)
             {
                 case 1:
                     SellToPlayer(player);
                     break;
                 default:
-                    //begin the day
                     break;
 
             }
