@@ -24,7 +24,7 @@ namespace Milk_Stand
             Console.WriteLine("Today is " + day.name + "!");
         }
 
-        public void CustomerGenerator()
+        public void CustomerGenerator(Player player, Weather weather, Recipe recipe)
 
         {
             for (int i = 0; i < 101; i++)
@@ -35,9 +35,18 @@ namespace Milk_Stand
                 customer.DetermineCustomerThirst();
                 Console.WriteLine(customer.Type + customer.Name);
                 TheDaysCustomers.Add(customer);
+                customer.DetermineChanceToBuy(customer, weather, recipe);
+                customer.DetermineWhoBuys(player, recipe);
             }
 
             Console.ReadLine();
+        }
+
+        public void DisplayEndofDayReport()
+        {
+            Console.WriteLine("END OF DAY REPORT:");
+            Console.WriteLine("You have made " + " today.");
+            Console.WriteLine("Your total money is : $" );
         }
     }
  }

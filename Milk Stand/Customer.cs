@@ -9,7 +9,6 @@ namespace Milk_Stand
 
     class Customer
     {
-
         public string Name;
         public double Thirst;
         public string Type;
@@ -49,8 +48,7 @@ namespace Milk_Stand
             Types[19] = "Expert ";
             Types[20] = "Hiker ";
 
-            Type = Convert.ToString(Types[Random.Next(0, 21)]);
-            
+            Type = Convert.ToString(Types[Random.Next(0, 21)]);           
         }
 
         public void DetermineCustomerName()
@@ -93,19 +91,15 @@ namespace Milk_Stand
             Names[33] = "Frances";
 
             Name = Convert.ToString(Names[Random.Next(0, 34)]);
-            
-
         }
 
         public void DetermineCustomerThirst()
         {
             Thirst = Random.Next(1, 7);       
         }
-
-       
+      
         public void DetermineChanceToBuy(Customer customer, Weather weather, Recipe recipe)
-        {
-           
+        { 
             if (weather.CurrentWeather == "Rainy")
             {
                 ChancetoBuy -= 10;
@@ -149,16 +143,19 @@ namespace Milk_Stand
             if (ChancetoBuy >= 70)
             {
                 Console.WriteLine(" buys a glass of Milk!");
-                
+                MakePurchase(player, recipe);  
             }
 
             else
             {
                 Console.WriteLine(" doesn't buy anything!!!");
-            }
-            
+            }          
         }
 
+       public void MakePurchase(Player player, Recipe recipe)
+        {
+            player.money += recipe.price;
+        }
      }
  }
 

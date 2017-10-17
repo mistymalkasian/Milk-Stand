@@ -11,9 +11,8 @@ namespace Milk_Stand
         public Shop()
         {
             
-        }
-        
-        public void AskToShop(Player player)
+        }        
+        public void AskToShop(Player player, Recipe recipe)
         {
             Console.WriteLine("Type 1 if you'd like to go to the shop. Otherwise, we'll begin making the day's recipe!");
            string answer = Console.ReadLine();
@@ -24,13 +23,12 @@ namespace Milk_Stand
                     SellToPlayer(player);
                     break;
                 default:
-                    //begin the day
+                    recipe.CreateRecipe(player);
                     break;
             }
         }
         public void SellToPlayer(Player player)
-        {
-            
+        {            
             Console.WriteLine("Welcome to Dairy King!");
             Console.WriteLine("We just so happen to only sell the exact items you need for your business...");
             Console.WriteLine("How convenient!");
@@ -54,8 +52,7 @@ namespace Milk_Stand
                     player.PlayerInventory.MilkCartons.Add(MilkCarton);
                     player.money -= MilkCarton.price;
 
-                }
-                
+                }               
             }
                     
             else if (CustomerChoice == 2)
@@ -68,7 +65,6 @@ namespace Milk_Stand
                     player.PlayerInventory.FlavorSyrups.Add(FlavorSyrup);
                     player.money -= FlavorSyrup.price;
                 }
-
             }   
 
             else if (CustomerChoice == 3)
@@ -93,7 +89,6 @@ namespace Milk_Stand
                     player.PlayerInventory.IceCubes.Add(IceCube);
                     player.money -= IceCube.price;
                 }
-
             }     
             
             else if (CustomerChoice == 5)

@@ -9,7 +9,6 @@ namespace Milk_Stand
     class Player
     {
         public double money;
-        public double recipe;
         public Inventory PlayerInventory;
 
         public Player()
@@ -32,11 +31,6 @@ namespace Milk_Stand
         {
             Console.WriteLine("You currently have: $" + money);
             Console.ReadLine();
-
         }
-
-
-
-
     }
 }

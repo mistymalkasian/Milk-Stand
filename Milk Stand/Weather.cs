@@ -11,14 +11,12 @@ namespace Milk_Stand
     
         public string Forecast;
         public string CurrentWeather;
+        Random Random = new Random();
 
         public Weather()
         {
-            Random Random = new Random();           
+
         }
-
-       
-
         public void DetermineForecast()
         { 
             string[] WeatherTypes = new string[5];
@@ -31,11 +29,8 @@ namespace Milk_Stand
             Forecast = Convert.ToString(WeatherTypes[Random.Next(0, 5)]);
             Console.WriteLine("FORECAST");
             Console.WriteLine("Tomorrow's weather will be: " + Forecast);
-          
-            
         }
 
-        Random Random = new Random();
    
         
          public void DisplayWeather(string Forecast)
@@ -46,10 +41,5 @@ namespace Milk_Stand
             Console.ReadLine();
         }   
     }
-  
-    //public void WeatherMultiplier(int Number)
-    //{
-
-    //}
 }
 

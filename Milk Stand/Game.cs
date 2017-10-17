@@ -16,24 +16,35 @@ namespace Milk_Stand
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.ReadLine();
-            
+            Console.ReadLine();           
         }
 
 
-    public void RunGame(Player player, Shop shop, Weather weather, Day day, Customer customer)
+    public void RunGame(Player player, Shop shop, Weather weather, Day day, Customer customer, Recipe recipe)
+        {  
+            for( int i = 0; i < 8; i++)
+            {
+                day.DisplayDay(day);
+                weather.DetermineForecast();
+                weather.DisplayWeather(weather.Forecast);
+                player.DisplayMoney();
+                shop.SellToPlayer(player);
+                player.DisplayInventory();
+                player.CreateRecipe(recipe);
+                player.SetPrice(recipe);
+                day.GenerateCustomers(player, weather, recipe);
+                day.DisplayEndofDayReport();
+            }
+           
+
+        }
+        
+       public void DisplayEndgameResults()
         {
-            day.CustomerGenerator();
-            day.DisplayDay(day);
-            weather.DetermineForecast();
-            weather.DisplayWeather(weather.Forecast);
-            
-            shop.SellToPlayer(player);
-            player.DisplayMoney();
-            player.DisplayInventory();
-                       
+            Console.WriteLine("Well, it looks like your business venture, like all good things, has come to an end.");
+            Console.WriteLine("Here are your final results!");
+            Console.WriteLine("Overall profit : $");
+            Console.WriteLine("Play again sometime!");
         }
-
-   
     }
 }

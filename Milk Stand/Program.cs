@@ -17,12 +17,10 @@ namespace Milk_Stand
             Player Player = new Player();
             Recipe Recipe = new Recipe();
             Customer Customer = new Customer();
-           
-
-
+            
             Game.DisplayRules();
-            Game.RunGame(Player, Shop, Weather, Day1, Customer);
-            //customer.CustomerGenerator();
+            Game.RunGame(Player, Shop, Weather, Day1, Customer, Recipe);
+           
             
         }
     }

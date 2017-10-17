@@ -21,8 +21,6 @@ namespace Milk_Stand
         {
            
         }
-
-
         public void CreateRecipe(Player player)
         {
             Console.WriteLine("Now it's time to create the recipe you want to use for the day.");
@@ -34,7 +32,6 @@ namespace Milk_Stand
                 player.PlayerInventory.MilkCartons.RemoveAt(0);
             }
             
-
             Console.WriteLine("How many sugar packets would you like to add to the pitcher?");
             Console.WriteLine("Hint: If you add too few or too many packets per pitcher, the customers won't like your product.");
             AmountofSugar = Convert.ToInt32(Console.ReadLine());
@@ -46,7 +43,6 @@ namespace Milk_Stand
 
             Console.WriteLine("How many ice cubes would you like to add to each cup?");
             AmountofCubes = Convert.ToInt32(Console.ReadLine());
-
         }
         
         public void SetPrice()
