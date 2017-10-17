@@ -12,17 +12,14 @@ namespace Milk_Stand
         {
             Game Game = new Game();
             Weather Weather = new Weather();
-            Day Day1 = new Day("Sunday");
             Shop Shop = new Shop();
             Player Player = new Player();
             Recipe Recipe = new Recipe();
             Customer Customer = new Customer();
-            
+
             //Game.DisplayRules();
-         
-            Game.RunGame(Player, Shop, Weather, Day1, Customer, Recipe);
-            Console.ReadLine();
-            //Game.DisplayEndgameResults();           
+            Game.RunGame(Player, Shop, Weather, Customer, Recipe);
+            Game.DisplayEndgameResults();           
         }
     }
 }

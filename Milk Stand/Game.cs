@@ -8,6 +8,12 @@ namespace Milk_Stand
 {
     class Game
     {
+        public int CurrentDay;
+
+        public Game()
+        {
+            
+        }
 
        public void DisplayRules()
         {
@@ -21,14 +27,17 @@ namespace Milk_Stand
 
 
     public void RunGame(Player player, Shop shop, Weather weather, Customer customer, Recipe recipe)
-        {  
-            //for( int i = 0; i < 8; i++)
+        {
+
+            weather.DetermineWeeksForecast();
+            for (CurrentDay = 0; CurrentDay < 7; CurrentDay++)
             {
-                Day day = new Day();
-                weather.DetermineWeeksForecast();
-                weather.DisplayCurrentWeather();
-                weather.DetermineTomorrowsForecast();
+                Day day = new Day();   
+                day.weather = weather.WeeklyWeather[CurrentDay + 1];
+                weather.DisplayCurrentWeather(CurrentDay);
+                weather.DetermineTomorrowsForecast(CurrentDay);
                 //shop.SellToPlayer(player);
+                //player.CreateRecipe(recipe);
                 //day.GenerateCustomers(player, weather, recipe, day);
                 //day.DisplayEndofDayReport(player);
             }

@@ -12,6 +12,7 @@ namespace Milk_Stand
         public string weather;
         public int CurrentDay;
         public Random Random = new Random();
+        Recipe Recipe = new Recipe();
         public List<Customer> TheDaysCustomers = new List<Customer>();
 
         public Day()

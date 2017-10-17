@@ -9,11 +9,9 @@ namespace Milk_Stand
     class Weather
     {
         Random Random = new Random();
-        public string YesterdaysForecast;
-        public string TomorrowsForecast;
         public string CurrentWeather;
-        public int i;
-        List<string> WeeklyWeather = new List<string>(); 
+        //public int i;
+        public List<string> WeeklyWeather = new List<string>(); 
 
         public Weather()
         {
@@ -41,15 +39,17 @@ namespace Milk_Stand
             }
         }
 
-       public void DetermineTomorrowsForecast(Day day)
+       public void DetermineTomorrowsForecast(int CurrentDay)
         {
-            Console.WriteLine("Tomorrow's forecast is: " + WeeklyWeather[i + 1]);
+            Console.WriteLine("Tomorrow's forecast is: " + WeeklyWeather[CurrentDay + 1]);
         }
        
-         public void DisplayCurrentWeather(Day day)
+         public void DisplayCurrentWeather(int CurrentDay)
         {
+            CurrentWeather = WeeklyWeather[CurrentDay];
+
             Console.WriteLine("WEATHER NEWS");
-            Console.WriteLine("Today's weather is: " + WeeklyWeather[i]);
+            Console.WriteLine("Today's weather is: " + CurrentWeather);
             Console.ReadLine();
         }   
     }
