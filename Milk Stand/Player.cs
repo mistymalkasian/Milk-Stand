@@ -121,5 +121,11 @@ namespace Milk_Stand
                 SetPrice(recipe);
             }
         }
+
+        public void BeginDay()
+        {
+            Console.WriteLine("You trudge outside, ready to begin the business day... and A WILD HORDE OF CUSTOMERS APPEAR!!!");
+            Console.ReadLine();
+        }
     }
 }
