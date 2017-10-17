@@ -8,21 +8,15 @@ namespace Milk_Stand
 {
     class Day
     {
-        public string name;
         public double DaysEarnings;
-        public Weather weather;
+        public string weather;
+        public int CurrentDay;
         public Random Random = new Random();
         public List<Customer> TheDaysCustomers = new List<Customer>();
 
-        public Day(string name)
+        public Day()
         {
-            this.name = name;
-
-        }
-
-        public void DisplayDay(Day day)
-        {
-            Console.WriteLine("Today is " + day.name + "!");
+            
         }
 
         public void GenerateCustomers(Player player, Weather weather, Recipe recipe, Day day)

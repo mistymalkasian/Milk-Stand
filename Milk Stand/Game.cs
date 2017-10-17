@@ -20,11 +20,14 @@ namespace Milk_Stand
         }
 
 
-    public void RunGame(Player player, Shop shop, Weather weather, Day day, Customer customer, Recipe recipe)
+    public void RunGame(Player player, Shop shop, Weather weather, Customer customer, Recipe recipe)
         {  
             //for( int i = 0; i < 8; i++)
             {
+                Day day = new Day();
                 weather.DetermineWeeksForecast();
+                weather.DisplayCurrentWeather();
+                weather.DetermineTomorrowsForecast();
                 //shop.SellToPlayer(player);
                 //day.GenerateCustomers(player, weather, recipe, day);
                 //day.DisplayEndofDayReport(player);

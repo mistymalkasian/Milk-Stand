@@ -11,7 +11,7 @@ namespace Milk_Stand
         static void Main(string[] args)
         {
             Game Game = new Game();
-            Weather Weather = new Weather(); 
+            Weather Weather = new Weather();
             Day Day1 = new Day("Sunday");
             Shop Shop = new Shop();
             Player Player = new Player();

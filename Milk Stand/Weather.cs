@@ -12,6 +12,7 @@ namespace Milk_Stand
         public string YesterdaysForecast;
         public string TomorrowsForecast;
         public string CurrentWeather;
+        public int i;
         List<string> WeeklyWeather = new List<string>(); 
 
         public Weather()
@@ -30,8 +31,8 @@ namespace Milk_Stand
 
             Console.WriteLine("WEEKLY FORECAST:");
 
-            int counter;
-            for (counter = 1; counter < 8; counter++)
+            
+            for (int counter = 1; counter < 8; counter++)
             {
                 string DailyForecast = Convert.ToString(WeatherTypes[Random.Next(0, 5)]);
                 Console.WriteLine("Day " + counter + "'s weather will be: " + DailyForecast);
@@ -39,8 +40,13 @@ namespace Milk_Stand
 
             }
         }
+
+       public void DetermineTomorrowsForecast(Day day)
+        {
+            Console.WriteLine("Tomorrow's forecast is: " + WeeklyWeather[i + 1]);
+        }
        
-         public void DisplayCurrentWeather()
+         public void DisplayCurrentWeather(Day day)
         {
             Console.WriteLine("WEATHER NEWS");
             Console.WriteLine("Today's weather is: " + WeeklyWeather[i]);
