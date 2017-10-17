@@ -9,6 +9,7 @@ namespace Milk_Stand
     class Day
     {
         public string name;
+        public double earnings;
         
         Random Random = new Random();
         public List<Customer> TheDaysCustomers = new List<Customer>();
@@ -24,7 +25,7 @@ namespace Milk_Stand
             Console.WriteLine("Today is " + day.name + "!");
         }
 
-        public void CustomerGenerator(Player player, Weather weather, Recipe recipe)
+        public void GenerateCustomers(Player player, Weather weather, Recipe recipe)
 
         {
             for (int i = 0; i < 101; i++)
@@ -45,7 +46,7 @@ namespace Milk_Stand
         public void DisplayEndofDayReport()
         {
             Console.WriteLine("END OF DAY REPORT:");
-            Console.WriteLine("You have made " + " today.");
+            Console.WriteLine("You have made $" + earnings + " today.");
             Console.WriteLine("Your total money is : $" );
         }
     }
