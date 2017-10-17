@@ -35,12 +35,19 @@ namespace Milk_Stand
             Console.ReadLine();
         }
 
-        public void CreateRecipe(Recipe recipe)
+        public void CreateRecipe(Recipe recipe) //THIS IS A THING DOER AND IT NEEDS TO BE FIXED BUT I DONT CURRENTLY HAVE THE TIME D:
         {
             Console.WriteLine("Now it's time to create the recipe you want to use for the day.");
-
             Console.WriteLine("How many pitchers would you like to make? Remember that each pitcher uses up 10 milk cartons and serves 10 people.");
-            recipe.AmountofPitchers = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                recipe.AmountofPitchers = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid input.Please enter an integer, and make sure you have the right amount of money to buy it! :)");
+                CreateRecipe(recipe);
+            }
             for (int i = 0; i < recipe.AmountofPitchers * 10; i++)
             {
                 PlayerInventory.MilkCartons.RemoveAt(0);
@@ -49,7 +56,16 @@ namespace Milk_Stand
 
             Console.WriteLine("How many sugar packets would you like to add to the pitcher?");
             Console.WriteLine("Hint: If you add too few or too many packets per pitcher, the customers won't like your product.");
-            recipe.AmountofSugar = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                recipe.AmountofSugar = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid input.Please enter an integer, and make sure you have the right amount of money to buy it! :)");
+                CreateRecipe(recipe);
+            }
+           
             for (int i = 0; i < recipe.AmountofSugar; i++)
             {
                 PlayerInventory.SugarPackets.RemoveAt(0);
@@ -57,16 +73,33 @@ namespace Milk_Stand
             Console.WriteLine("You are adding " + recipe.AmountofSugar + " sugar packets to each pitcher today.");
 
             Console.WriteLine("How many squirts of flavor syrup would you like to add to the pitcher?");
-            Console.WriteLine("Hint: If you add too few or too many flavor syrups per pitcher, the customers won't like your product.");
-            recipe.AmountofFlavor = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Hint: If you add too few or too many flavor syrups per pitcher, the customers won't like your product.");           
+            try
+            {
+                recipe.AmountofFlavor = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid input.Please enter an integer, and make sure you have the right amount of money to buy it! :)");
+                CreateRecipe(recipe);
+            }
+
             for (int i = 0; i < recipe.AmountofFlavor; i++)
             {
                 PlayerInventory.FlavorSyrups.RemoveAt(0);
             }
             Console.WriteLine("You are adding " + recipe.AmountofFlavor + " flavor syrups to each pitcher today.");
 
-            Console.WriteLine("How many ice cubes would you like to add to each cup?");
-            recipe.AmountofCubes = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("How many ice cubes would you like to add to each cup?");          
+            try
+            {
+                recipe.AmountofCubes = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid input. Please enter an integer, and make sure you have the right amount of money to buy it! :)");
+            }
+
             for (int i = 0; i < recipe.AmountofCubes; i++)
             {
                 PlayerInventory.IceCubes.RemoveAt(0);
@@ -76,12 +109,17 @@ namespace Milk_Stand
 
         public void SetPrice(Recipe recipe)
         {
-            Console.WriteLine("What price will you make each cup today?");
+            Console.WriteLine("What price will you make each cup?");
             Console.WriteLine("Hint: If you make the price too high, the customers won't want to buy as much, but if you make it too low, you'll lose money!");
-            recipe.price = Convert.ToInt32(Console.ReadLine());
-
-            //INSERT TRY/CATCH HERE
+            try
+            {
+                recipe.price = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid input. Please only enter a price, in integers.");
+                SetPrice(recipe);
+            }
         }
-
     }
 }

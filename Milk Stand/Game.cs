@@ -36,10 +36,10 @@ namespace Milk_Stand
                 day.weather = weather.WeeklyWeather[CurrentDay + 1];
                 weather.DisplayCurrentWeather(CurrentDay);
                 weather.DetermineTomorrowsForecast(CurrentDay);
-                //shop.SellToPlayer(player);
-                //player.CreateRecipe(recipe);
-                //day.GenerateCustomers(player, weather, recipe, day);
-                //day.DisplayEndofDayReport(player);
+                shop.SellToPlayer(player);
+                player.CreateRecipe(recipe);
+                day.GenerateCustomers(player, weather, recipe, day);
+                day.DisplayEndofDayReport(player, day);
             }
         }
         

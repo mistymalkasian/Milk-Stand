@@ -111,7 +111,7 @@ namespace Milk_Stand
             {
                 ChancetoBuy += 15;
             }
-            else if (customer.Thirst >= 4)
+            if (customer.Thirst >= 4)
             {
                 ChancetoBuy += 10;
             }
@@ -119,7 +119,7 @@ namespace Milk_Stand
             {
                 ChancetoBuy -= 10;
             }
-            else if (recipe.IsGood == true)
+            if (recipe.IsGood == true)
             {
                 ChancetoBuy += 25;
             } 
@@ -127,7 +127,7 @@ namespace Milk_Stand
             {
                 ChancetoBuy -= 25;
             }
-            else if (recipe.IsHigh == true)
+            if (recipe.IsHigh == true)
             {
                 ChancetoBuy -= 25;
             }

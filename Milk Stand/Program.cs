@@ -17,7 +17,7 @@ namespace Milk_Stand
             Recipe Recipe = new Recipe();
             Customer Customer = new Customer();
 
-            //Game.DisplayRules();
+            Game.DisplayRules();
             Game.RunGame(Player, Shop, Weather, Customer, Recipe);
             Game.DisplayEndgameResults();           
         }
