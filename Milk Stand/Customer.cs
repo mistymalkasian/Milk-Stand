@@ -9,7 +9,6 @@ namespace Milk_Stand
 
     class Customer
     {
-        //Random Random = new Random();
         public string Name;
         public double Thirst;
         public string Type;
@@ -101,23 +100,23 @@ namespace Milk_Stand
         { 
             if (weather.CurrentWeather == "Rainy")
             {
-                ChancetoBuy -= 10;
+                ChancetoBuy -= 20;
             }
             else if (weather.CurrentWeather == "Sunny")
             {
-                ChancetoBuy += 10;
+                ChancetoBuy += 20;
             }
             else if (weather.CurrentWeather == "HOT!")
             {
-                ChancetoBuy += 15;
+                ChancetoBuy += 25;
             }
-            if (customer.Thirst >= 4)
+            if (customer.Thirst >= 3)
             {
-                ChancetoBuy += 10;
+                ChancetoBuy += 25;
             }
-            else if (customer.Thirst <= 3)
+            else if (customer.Thirst < 3)
             {
-                ChancetoBuy -= 10;
+                ChancetoBuy -= 20;
             }
             if (recipe.IsGood == true)
             {
@@ -125,15 +124,15 @@ namespace Milk_Stand
             } 
             else if (recipe.IsGood == false)
             {
-                ChancetoBuy -= 25;
+                ChancetoBuy -= 20;
             }
             if (recipe.IsHigh == true)
             {
-                ChancetoBuy -= 25;
+                ChancetoBuy -= 20;
             }
             else if (recipe.IsHigh == false)
             {
-                ChancetoBuy += 25;
+                ChancetoBuy += 40;
             } 
         }
 
@@ -145,7 +144,7 @@ namespace Milk_Stand
                 MakePurchase(player, recipe);
                 MakePurchase(player, recipe); 
             }
-            else if (ChancetoBuy >= 50 && ChancetoBuy <= 60)
+            else if (ChancetoBuy >= 40 && ChancetoBuy <= 69)
                 {
                 Console.WriteLine(" buys a glass of Milk!");
                 MakePurchase(player, recipe);

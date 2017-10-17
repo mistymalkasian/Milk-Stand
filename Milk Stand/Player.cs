@@ -35,7 +35,7 @@ namespace Milk_Stand
             Console.ReadLine();
         }
 
-        public void CreateRecipe(Recipe recipe) //THIS IS A THING DOER AND IT NEEDS TO BE FIXED BUT I DONT CURRENTLY HAVE THE TIME D:
+        public void CreateRecipe(Recipe recipe) //THIS IS A THING DOER AND MUST BE FIXED
         {
             Console.WriteLine("Now it's time to create the recipe you want to use for the day.");
             Console.WriteLine("How many pitchers would you like to make? Remember that each pitcher uses up 10 milk cartons and serves 10 people.");

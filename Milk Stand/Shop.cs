@@ -63,7 +63,7 @@ namespace Milk_Stand
                     
             else if (CustomerChoice == 2)
             {
-                Console.WriteLine("Please enter how many flavor packets you would like to purchase.");
+                Console.WriteLine("Please enter how many flavor syrups you would like to purchase.");
                 double NumberofPackets = Convert.ToInt32(Console.ReadLine());
                 for (int i = 0; i < NumberofPackets; i++)
                 {
@@ -159,7 +159,6 @@ namespace Milk_Stand
                     break;
 
             }
-        }
-      
+        }    
     }
 }
