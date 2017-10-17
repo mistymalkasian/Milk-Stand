@@ -9,7 +9,9 @@ namespace Milk_Stand
     class Player
     {
         public double money;
+        public double TotalEarnings;
         public Inventory PlayerInventory;
+        
 
         public Player()
         {
@@ -43,6 +45,7 @@ namespace Milk_Stand
             {
                 PlayerInventory.MilkCartons.RemoveAt(0);
             }
+            Console.WriteLine("You are making " + recipe.AmountofPitchers + " pitchers today.");
 
             Console.WriteLine("How many sugar packets would you like to add to the pitcher?");
             Console.WriteLine("Hint: If you add too few or too many packets per pitcher, the customers won't like your product.");
@@ -51,6 +54,7 @@ namespace Milk_Stand
             {
                 PlayerInventory.SugarPackets.RemoveAt(0);
             }
+            Console.WriteLine("You are adding " + recipe.AmountofSugar + " sugar packets to each pitcher today.");
 
             Console.WriteLine("How many squirts of flavor syrup would you like to add to the pitcher?");
             Console.WriteLine("Hint: If you add too few or too many flavor syrups per pitcher, the customers won't like your product.");
@@ -59,6 +63,7 @@ namespace Milk_Stand
             {
                 PlayerInventory.FlavorSyrups.RemoveAt(0);
             }
+            Console.WriteLine("You are adding " + recipe.AmountofFlavor + " flavor syrups to each pitcher today.");
 
             Console.WriteLine("How many ice cubes would you like to add to each cup?");
             recipe.AmountofCubes = Convert.ToInt32(Console.ReadLine());
@@ -66,6 +71,7 @@ namespace Milk_Stand
             {
                 PlayerInventory.IceCubes.RemoveAt(0);
             }
+            Console.WriteLine("You are adding " + recipe.AmountofCubes + " cubes to each cup today.");
         }
 
         public void SetPrice(Recipe recipe)

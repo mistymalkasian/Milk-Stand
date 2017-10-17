@@ -8,17 +8,18 @@ namespace Milk_Stand
 {
     class Weather
     {
-    
-        public string Forecast;
-        public string CurrentWeather;
         Random Random = new Random();
+        public string YesterdaysForecast;
+        public string TomorrowsForecast;
+        public string CurrentWeather;
+        List<string> WeeklyWeather = new List<string>(); 
 
         public Weather()
         {
 
         }
-        public void DetermineForecast()
-        { 
+        public void DetermineWeeksForecast()
+        {
             string[] WeatherTypes = new string[5];
 
             WeatherTypes[0] = "Rainy";
@@ -26,18 +27,23 @@ namespace Milk_Stand
             WeatherTypes[2] = "Cloudy";
             WeatherTypes[3] = "Sunny";
             WeatherTypes[4] = "HOT!";
-            Forecast = Convert.ToString(WeatherTypes[Random.Next(0, 5)]);
-            Console.WriteLine("FORECAST");
-            Console.WriteLine("Tomorrow's weather will be: " + Forecast);
-        }
 
-   
-        
-         public void DisplayWeather(string Forecast)
+            Console.WriteLine("WEEKLY FORECAST:");
+
+            int counter;
+            for (counter = 1; counter < 8; counter++)
+            {
+                string DailyForecast = Convert.ToString(WeatherTypes[Random.Next(0, 5)]);
+                Console.WriteLine("Day " + counter + "'s weather will be: " + DailyForecast);
+                WeeklyWeather.Add(DailyForecast);
+
+            }
+        }
+       
+         public void DisplayCurrentWeather()
         {
-            CurrentWeather = Forecast;
             Console.WriteLine("WEATHER NEWS");
-            Console.WriteLine("Today's weather is: " + CurrentWeather);
+            Console.WriteLine("Today's weather is: " + WeeklyWeather[i]);
             Console.ReadLine();
         }   
     }

@@ -9,20 +9,19 @@ namespace Milk_Stand
 
     class Customer
     {
+        //Random Random = new Random();
         public string Name;
         public double Thirst;
         public string Type;
         public double ChancetoBuy = 25;
         
-       Random Random = new Random();
-
 
         public Customer()
         {
-           
+            
         }
 
-        public void DetermineCustomerType()
+        public void DetermineCustomerType(Day day)
         {
             string[] Types = new string[21];
 
@@ -48,10 +47,10 @@ namespace Milk_Stand
             Types[19] = "Expert ";
             Types[20] = "Hiker ";
 
-            Type = Convert.ToString(Types[Random.Next(0, 21)]);           
+            Type = Convert.ToString(Types[day.Random.Next(0, 21)]);           
         }
 
-        public void DetermineCustomerName()
+        public void DetermineCustomerName(Day day)
         { 
             string[] Names = new string[34];
 
@@ -90,12 +89,12 @@ namespace Milk_Stand
             Names[32] = "Jean";
             Names[33] = "Frances";
 
-            Name = Convert.ToString(Names[Random.Next(0, 34)]);
+            Name = Convert.ToString(Names[day.Random.Next(0, 34)]);
         }
 
-        public void DetermineCustomerThirst()
+        public void DetermineCustomerThirst(Day day)
         {
-            Thirst = Random.Next(1, 7);       
+            Thirst = day.Random.Next(1, 7);       
         }
       
         public void DetermineChanceToBuy(Customer customer, Weather weather, Recipe recipe)
@@ -142,13 +141,18 @@ namespace Milk_Stand
         {
             if (ChancetoBuy >= 70)
             {
-                Console.WriteLine(" buys a glass of Milk!");
-                MakePurchase(player, recipe);  
+                Console.WriteLine(" buys TWO glasses of Milk!!!");
+                MakePurchase(player, recipe);
+                MakePurchase(player, recipe); 
             }
-
+            else if (ChancetoBuy >= 50 && ChancetoBuy <= 60)
+                {
+                Console.WriteLine(" buys a glass of Milk!");
+                MakePurchase(player, recipe);
+            }
             else
             {
-                Console.WriteLine(" doesn't buy anything!!!");
+                Console.WriteLine(" doesn't buy anything!!");
             }          
         }
 

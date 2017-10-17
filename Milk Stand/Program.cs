@@ -18,11 +18,11 @@ namespace Milk_Stand
             Recipe Recipe = new Recipe();
             Customer Customer = new Customer();
             
-            Game.DisplayRules();
+            //Game.DisplayRules();
+         
             Game.RunGame(Player, Shop, Weather, Day1, Customer, Recipe);
-            Game.DisplayEndgameResults();
-           
-            
+            Console.ReadLine();
+            //Game.DisplayEndgameResults();           
         }
     }
 }
