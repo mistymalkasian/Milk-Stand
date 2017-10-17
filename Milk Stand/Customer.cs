@@ -112,11 +112,11 @@ namespace Milk_Stand
             }
             if (customer.Thirst >= 3)
             {
-                ChancetoBuy += 25;
+                ChancetoBuy += 20;
             }
             else if (customer.Thirst < 3)
             {
-                ChancetoBuy -= 20;
+                ChancetoBuy -= 10;
             }
             if (recipe.IsGood == true)
             {
@@ -124,15 +124,15 @@ namespace Milk_Stand
             } 
             else if (recipe.IsGood == false)
             {
-                ChancetoBuy -= 20;
+                ChancetoBuy -= 25;
             }
             if (recipe.IsHigh == true)
             {
-                ChancetoBuy -= 20;
+                ChancetoBuy -= 50;
             }
             else if (recipe.IsHigh == false)
             {
-                ChancetoBuy += 40;
+                ChancetoBuy += 50;
             } 
         }
 
@@ -159,6 +159,7 @@ namespace Milk_Stand
         {
             player.money += recipe.price;
             player.AllEarnings.Add(player.DaysEarnings += recipe.price);
+            player.DailyCupsSold++;
         }
      }
  }

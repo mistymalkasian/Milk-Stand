@@ -69,8 +69,9 @@ namespace Milk_Stand
         public void DisplayEndofDayReport(Player player, Day day)
         {
             Console.WriteLine("END OF DAY REPORT:");
+            Console.WriteLine("You have sold " + player.DailyCupsSold + " cups of milk today.");
             Console.WriteLine("You have made $" + player.DaysEarnings + " today.");
-            Console.WriteLine("Your total money is : $" + player.money);
+            Console.WriteLine("Your total money is : $" + player.money);        
             Console.ReadLine();
         }
 

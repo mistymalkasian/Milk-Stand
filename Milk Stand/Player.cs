@@ -8,6 +8,7 @@ namespace Milk_Stand
 {
     class Player
     {
+        public double DailyCupsSold;
         public double money;
         public double TotalEarnings;
         public double DaysEarnings;
