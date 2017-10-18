@@ -71,8 +71,10 @@ namespace Milk_Stand
             Console.WriteLine("END OF DAY REPORT:");
             Console.WriteLine("You have sold " + player.DailyCupsSold + " cups of milk today.");
             Console.WriteLine("You have made $" + player.DaysEarnings + " today.");
-            Console.WriteLine("Your total money is : $" + player.money);        
+            Console.WriteLine("Your total money is : $" + player.money);
+            Console.WriteLine("Your lifetime earnings are: $" + player.AllEarnings.Sum());       
             Console.ReadLine();
+            Console.Clear();
         }
 
         public void DisplayEndgameResults(Player player)

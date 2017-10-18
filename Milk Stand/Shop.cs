@@ -30,6 +30,7 @@ namespace Milk_Stand
             {
                 Console.WriteLine("Please enter (in numerals) how many milk cartons you would like to purchase.");
                 Console.WriteLine("Hint: Ten cartons will fill a pitcher, and a pitcher serves 10 people.");
+
                 double NumberofCartons = Convert.ToInt32(Console.ReadLine());
                     for (int i = 0; i < NumberofCartons; i++)
                 {
@@ -138,7 +139,7 @@ namespace Milk_Stand
                 SellToPlayer(player, recipe);
             }
 
-            Console.WriteLine("Type 1 if you would like to buy another item. Otherwise press 2 to begin making the day's recipe!");
+            Console.WriteLine("Type 1 if you would like to buy another item. Press any other number to begin making the day's recipe!");
             try
             {
                 int input = Convert.ToInt32(Console.ReadLine());
@@ -148,18 +149,14 @@ namespace Milk_Stand
                     case 1:
                         SellToPlayer(player, recipe);
                         break;
-                    case 2:
-                        player.CreateRecipe(recipe);
-                        break;
                     default:
-                        player.CreateRecipe(recipe);
                         break;
 
                 }
             }
             catch(Exception)
             {
-                Console.WriteLine("Invalid input, please only enter 1 or 2!");
+                Console.WriteLine("Invalid input, please only enter a number!");
             }
 
         }    

@@ -48,7 +48,7 @@ namespace Milk_Stand
             }
             catch (Exception)
             {
-                Console.WriteLine("Invalid input.Please enter an integer, and make sure you have the right amount of money to buy it! :)");
+                Console.WriteLine("Invalid input. Please only enter an integer.");
                 CreateRecipe(recipe);
             }
             for (int i = 0; i < recipe.AmountofPitchers * 10; i++)
@@ -65,7 +65,7 @@ namespace Milk_Stand
             }
             catch (Exception)
             {
-                Console.WriteLine("Invalid input.Please enter an integer, and make sure you have the right amount of money to buy it! :)");
+                Console.WriteLine("Invalid input. Please only enter an integer.");
                 CreateRecipe(recipe);
             }
            
@@ -83,7 +83,7 @@ namespace Milk_Stand
             }
             catch (Exception)
             {
-                Console.WriteLine("Invalid input.Please enter an integer, and make sure you have the right amount of money to buy it! :)");
+                Console.WriteLine("Invalid input. Please only enter an integer.");
                 CreateRecipe(recipe);
             }
 
@@ -100,7 +100,7 @@ namespace Milk_Stand
             }
             catch (Exception)
             {
-                Console.WriteLine("Invalid input. Please enter an integer, and make sure you have the right amount of money to buy it! :)");
+                Console.WriteLine("Invalid input. Please only enter an integer.");
             }
 
             for (int i = 0; i < recipe.AmountofCubes; i++)
